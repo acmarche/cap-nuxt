@@ -1,4 +1,15 @@
 <script setup>
+import Copyright from "~/components/footer/Copyright.vue";
+
+const links = [
+    {name:'Accueil',url:'/',id:1},
+    {name:'Commerces',url:'/',id:2},
+    {name:'Événements',url:'/',id:3},
+    {name:'À propos',url:'/',id:4},
+    {name:'Contact',url:'/',id:5},
+    {name:'Accès membre',url:'/',id:6},
+    {name:'Devenir membre',url:'/',id:7},
+]
 const articles = [
     {name: 'Où se garer à Marche-en-famenne ?', url: '/', id: 1},
     {name: '"Ma ville, mes commerçants" : Campagne de promotion du commerce local !', url: '/', id: 2},
@@ -14,26 +25,22 @@ const events = [
 
 <template>
     <footer
-            class="w-full min-h-[20rem] flex flex-col justify-between border-green-default bg-grey-dark p-5 pb-20 text-white xl:grid xl:grid-cols-4 xl:pb-5"
+            class="w-full min-h-[20rem] text-white xl:pb-5 "
     >
-
+        <div class="bg-grey-dark p-5 pb-20 flex flex-col justify-between xl:grid xl:grid-cols-4">
         <div>
             <h3 class="text-2xl mb-2">Liens</h3>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Commerces</a></li>
-                <li><a href="#">Événements</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Accès membre</a></li>
-                <li><a href="#">Devenir membre</a></li>
+                <li v-for="link in links" :key="link.id" class="py-1">
+                    <a :href="link.url">{{ link.name }}</a>
+                </li>
             </ul>
         </div>
 
         <div>
             <h3 class="text-2xl mb-2">Posts récents</h3>
             <ul>
-                <li v-for="article in articles" :key="article.id">
+                <li v-for="article in articles" :key="article.id" class="py-1">
                     <a :href="article.url">{{ article.name }}</a>
                 </li>
             </ul>
@@ -42,7 +49,7 @@ const events = [
         <div>
             <h3 class="text-2xl mb-2">Evenements</h3>
             <ul>
-                <li v-for="event in events" :key="event.id">
+                <li v-for="event in events" :key="event.id" class="py-1">
                     <a :href="event.url">{{ event.name }}</a>
                 </li>
             </ul>
@@ -71,6 +78,8 @@ const events = [
                     <img src="assets/src/resources/logoHome2.png" alt="adl" class="h-16">
                 </a>
             </div>
-        </div>
+        </div>        </div>
+
+        <Copyright/>
     </footer>
 </template>
