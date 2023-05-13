@@ -1,11 +1,9 @@
 <template>
-    <div class="flex h-16 bg-blue-banner">
-        <div class="w-1/3 bg-white">Empty</div>
-        <div class="bg-white" id="triangle-bottomright">
-
-        </div>
+    <div class="flex h-16 bg-blue-banner relative">
+        <div class="absolute inset-0 bg-white z-10 w-36 h16"></div>
+        <div class="relative w-1/3 bg-white angle"></div>
         <div class="text-white flex">
-            <div class="flex items-center px-8 text-lg">
+            <div class="flex items-center pl-12 px-8 text-lg">
                 Inscrivez-vous à la newsletter
             </div>
             <div class="bg-blue-default flex items-center px-5 text-lg">
@@ -13,7 +11,6 @@
             </div>
         </div>
     </div>
-
 </template>
 <style>
 #triangle-bottomright {
@@ -22,4 +19,9 @@
     border-bottom: 4rem solid #9AD7F7;
     border-left: 4rem solid transparent;
 }
+.angle {
+    transform:skew(120deg);
+}
 </style>
+<script setup lang="ts">
+</script>
