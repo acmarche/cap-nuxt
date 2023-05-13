@@ -1,5 +1,5 @@
 <template>
-    <div class="flex h-16 bg-blue-banner relative">
+    <div class="flex h-16 bg-blue-banner relative w-full">
         <div class="absolute inset-0 bg-white z-10 w-36 h16"></div>
         <div class="relative w-1/3 bg-white angle"></div>
         <div class="text-white flex">
