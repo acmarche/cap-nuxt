@@ -46,7 +46,8 @@ module.exports = {
                     light: "#608ba4",
                     lighter: "#4f8ea5",
                     hard: "#0d6efd",
-                    small: "#50afd2"
+                    small: "#50afd2",
+                    banner: "#9AD7F7"
                 },
                 green: {
                     default: "#A2BE63",
