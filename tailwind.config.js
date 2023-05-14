@@ -67,10 +67,12 @@ module.exports = {
         objectPosition: {
             "top-center": "top center",
             "center-center": "center center",
-            "bottom-center": "bottom center"
+            "bottom-center": "bottom center",
+            "bottom-left": "bottom left"
         },
       backgroundImage: {
         'hero-pattern': "url('/assets/src/resources/homepageBackground.png')",
+        'geometric': "url('/assets/src/resources/bg-geometric-left.png')",
         'footer-texture': "url('/img/footer-texture.png')",
       }
     },
