@@ -1,5 +1,5 @@
 <template>
-    <div class="flex h-16 relative justify-self-end self-end text-white -bottom-5 w-3/5">
+    <div class="col-start-2 row-start-3 justify-self-end self-end flex h-16 relative text-white -bottom-5 w-full">
         <div class="w-36 h16 triangle-bottomright"></div>
         <div class="flex items-center pl-12 px-8 text-lg  bg-blue-banner">
             Inscrivez-vous à la newsletter
