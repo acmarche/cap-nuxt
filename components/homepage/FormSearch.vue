@@ -3,7 +3,7 @@
 import IconSearch from "~/components/Icons/IconSearch.vue";
 </script>
 <template>
-    <form name="searching" class="mx-auto hidden lg:flex lg:w-[35rem]">
+    <form name="searching" class="mx-auto hidden lg:flex lg:w-[35rem] col-span-2">
         <label class="block" for="search">
             <span class="sr-only">Rechercher</span>
         </label>
