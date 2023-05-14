@@ -71,9 +71,10 @@ module.exports = {
             "bottom-left": "bottom left"
         },
       backgroundImage: {
-        'hero-pattern': "url('/assets/src/resources/homepageBackground.png')",
-        'geometric': "url('/assets/src/resources/bg-geometric-left.png')",
-        'footer-texture': "url('/img/footer-texture.png')",
+          'hero-pattern': "url('/assets/src/resources/homepageBackground.png')",
+          'geometric': "url('/assets/src/resources/bg-geometric-left.png')",
+          'checks': "url('/assets/src/resources/bg-cheques3.png')",
+          'footer-texture': "url('/img/footer-texture.png')",
       }
     },
     plugins: [
