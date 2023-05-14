@@ -52,7 +52,8 @@ module.exports = {
                 green: {
                     default: "#A2BE63",
                     light: "#94af4d",
-                    lighter: "#a8c564"
+                    lighter: "#a8c564",
+                    checks: "#00d19f",
                 },
                 grey: {
                     dark: "#707070",
