@@ -31,8 +31,8 @@ const news = [
         <div class="w-2/3 mx-auto">
             <h2 class="text-2xl font-pathway-bold text-blue-default mb-3">L'ACTU DES COMMERCANTS</h2>
             <ul class="grid grid-cols-3 gap-2">
-                <li v-for="item in news" :key="item.id" class="h-80">
-                    <a :href="item.url" class="block h-full w-full">
+                <li v-for="item in news" :key="item.id" class="h-96">
+                    <a :href="item.url" class="block h-full w-full news-block">
                         <div class="flex flex-col min-h-80">
                             <img :src="item.img" alt="img" class="h-48 w-auto object-cover">
                             <div class="flex flex-row gap-2 pt-2 bg-grey-light">
@@ -52,7 +52,7 @@ const news = [
     </section>
 </template>
 <style>
-a:hover {
+a.news-block:hover {
     box-shadow: 0px 0px 42px 3px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0px 0px 42px 3px rgba(0, 0, 0, 0.2);
 }

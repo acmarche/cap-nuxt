@@ -75,6 +75,7 @@ module.exports = {
           'hero-pattern': "url('/assets/src/resources/homepageBackground.png')",
           'geometric': "url('/assets/src/resources/bg-geometric-left.png')",
           'checks': "url('/assets/src/resources/bg-cheques3.png')",
+          'merchants-map': "url('/assets/src/resources/bg-map-diagonal.png')",
           'footer-texture': "url('/img/footer-texture.png')",
       }
     },
