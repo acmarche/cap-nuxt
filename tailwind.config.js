@@ -76,6 +76,7 @@ module.exports = {
           'geometric': "url('/assets/src/resources/bg-geometric-left.png')",
           'checks': "url('/assets/src/resources/bg-cheques3.png')",
           'merchants-map': "url('/assets/src/resources/bg-map-diagonal.png')",
+          'member-became': "url('/assets/src/resources/bg-member-diagonal.png')",
           'footer-texture': "url('/img/footer-texture.png')",
       }
     },

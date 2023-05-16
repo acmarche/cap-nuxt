@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-full mt-12 flex flex-col bg-green-checks bg-checks bg-no-repeat bg-center text-white h-[18rem] items-center justify-center">
+        class="w-full mt-12 flex flex-col bg-green-checks bg-checks bg-no-repeat bg-center bg-cover text-white h-[18rem] items-center justify-center">
         <h3 class="text-xl font-pathway-semi-bold">CHÈQUES LOCAUX – CAP SUR MARCHE</h3>
 
         <span class="my-5">

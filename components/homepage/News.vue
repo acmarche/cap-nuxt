@@ -1,30 +1,5 @@
 <script setup>
-const news = [
-    {
-        name: 'DÉCOUVERTE DU NUAGE DU MOIS',
-        img: 'https://cap.marche.be/media/nuages-manina.jpg',
-        excerpt: 'Depuis le début de cette année, chaque mois, nous vous proposons un nuage chocolaté éphémère.',
-        date: 'Du 12 Mai 2023 au 26 Mai 2023',
-        url: '/',
-        id: 1
-    },
-    {
-        name: 'DÉCOUVREZ LA VIDÉO "ARRÊT SUR IMMO" DE JULIE !',
-        img: 'https://cap.marche.be/media/capture-decran-2023-04-26-a-11.png',
-        excerpt: 'Julie Vande Lanoitte, votre conseillère en immobilier sur la zone de Marche.',
-        date: 'Du 1 Mai 2023 au 15 Mai 2023',
-        url: '/',
-        id: 2
-    },
-    {
-        name: 'TENDANCES PRINTANIÈRES',
-        img: 'https://cap.marche.be/media/2023-04-18-tendance-printaniere-cap-sur-marche-copie.jpg',
-        excerpt: 'Le printemps est là et cest le moment idéal pour réinventer votre cuisine !',
-        date: 'Le 31 Mai 2023',
-        url: '/',
-        id: 3
-    },
-]
+import {news} from "~/composables/newsItemsGets"
 </script>
 <template>
     <section class="w-full mt-12 bg-geometric bg-no-repeat bg-bottom-left">
