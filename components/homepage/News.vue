@@ -23,6 +23,12 @@ import {news} from "~/composables/newsItemsGets"
                     </a>
                 </li>
             </ul>
+            <a href="https://cap.marche.be/evenements" class="block ml-auto w-52 mt-2">
+                <div
+                    class="bg-blue-default hover:bg-blue-lighter text-white w-64 pt-2 p-3 text-lg flex flex-row justify-center items-center">
+                    Voir plus d’évenements
+                </div>
+            </a>
         </div>
     </section>
 </template>
