@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pathway Gothic One&display=swap");
-
+@import "assets/css/fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,7 +15,7 @@
     }
 
     * {
-      /*  outline: 1px red solid;*/
+        /*outline: 1px red solid;*/
     }
 
     a:hover {

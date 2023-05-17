@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "pathway-light";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-Light.ttf");
+}
+
+@font-face {
+  font-family: "pathway-extra-light";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "pathway-thin";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-Thin.ttf");
+}
+
+@font-face {
+  font-family: "pathway-regular";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-Regular.ttf");
+}
+
+@font-face {
+  font-family: "pathway-medium";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-Medium.ttf");
+}
+
+@font-face {
+  font-family: "pathway-bold";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-Bold.ttf");
+}
+
+@font-face {
+  font-family: "pathway-semi-bold";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "pathway-extra-bold";
+  src: url("assets/fonts/Pathway/PathwayExtreme_14pt-ExtraBold.ttf");
+}

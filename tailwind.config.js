@@ -12,12 +12,14 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                pathway: ["Pathway Gothic One", ...defaultTheme.fontFamily.sans],
+                pathway: ["Pathway Extreme", ...defaultTheme.fontFamily.sans],
                 "pathway-medium": [
                     "pathway-medium",
                     ...defaultTheme.fontFamily.sans,
                 ],
-                "pathway-thin": ["pathway-thin", ...defaultTheme.fontFamily.sans],
+                "pathway-thin": [
+                    "pathway-thin", ...defaultTheme.fontFamily.sans
+                ],
                 "pathway-light": [
                     "pathway-light",
                     ...defaultTheme.fontFamily.sans,
@@ -30,12 +32,14 @@ module.exports = {
                     "pathway-regular",
                     ...defaultTheme.fontFamily.sans,
                 ],
-                "pathway-bold": ["pathway-bold", ...defaultTheme.fontFamily.sans],
+                "pathway-bold": [
+                    "pathway-bold", ...defaultTheme.fontFamily.sans
+                ],
                 "pathway-semi-bold": [
                     "pathway-semi-bold",
                     ...defaultTheme.fontFamily.sans,
                 ],
-                "pathway-extra-bold": [
+                "pathway-extra-gold": [
                     "pathway-extra-bold",
                     ...defaultTheme.fontFamily.sans,
                 ],
