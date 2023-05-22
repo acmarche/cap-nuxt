@@ -1,14 +1,15 @@
 <template>
-    <div class="col-start-2 row-start-3 justify-self-end self-end flex h-16 relative text-white -bottom-5 w-full">
-        <div class="w-36 h16 triangle-bottomright"></div>
-        <div class="flex items-center pl-12 px-8 text-lg  bg-blue-banner">
-            Inscrivez-vous à la newsletter
-        </div>
-        <div class="bg-blue-default flex items-center px-5 text-lg">
-            Par ici !
-        </div>
-        <div class="flex-grow bg-blue-banner"></div>
+  <div
+      class="lg:col-start-2 lg:row-start-3 lg:justify-self-end self-end flex h-16 relative text-white bottom-0 lg:-bottom-5 w-full">
+    <div class="hidden lg:block w-36 h16 triangle-bottomright"></div>
+    <div class="flex items-center pl-12 px-8 text-lg  bg-blue-banner">
+      Inscrivez-vous à la newsletter
     </div>
+    <div class="bg-blue-default flex items-center px-5 text-lg">
+      Par ici !
+    </div>
+    <div class="flex-grow bg-blue-banner"></div>
+  </div>
 </template>
 <style>
 .triangle-bottomright {
