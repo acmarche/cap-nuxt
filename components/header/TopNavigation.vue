@@ -7,5 +7,8 @@ import {items} from "~/composables/menuItemsGet";
        class="">
       {{ item.name }}
     </a>
+    <a href="/" class="w-6 space-x-6 mr-4">
+      <img src="assets/src/resources/iconLogin.png" alt="login"/>
+    </a>
   </nav>
 </template>
