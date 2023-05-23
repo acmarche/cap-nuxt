@@ -4,7 +4,7 @@ import IconSearch from "~/components/Icons/IconSearch.vue";
 </script>
 <template>
   <form name="searching"
-        class="lg:mx-auto flex lg:flex w-full lg:w-1/2  lg:col-span-2 mt-44 mb-56 lg:mt-44 lg:mb-56">
+        class="mx-4 lg:mx-auto flex lg:flex w-full lg:w-1/2 lg:col-span-2 mt-44 mb-56 lg:mt-44 lg:mb-56">
     <label class="block" for="search">
       <span class="sr-only">Rechercher</span>
     </label>
