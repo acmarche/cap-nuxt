@@ -1,6 +1,5 @@
 <script setup>
 import TopNavigation from "~/components/header/TopNavigation.vue";
-
 const mobileMenu = ref(false)
 </script>
 <template>
