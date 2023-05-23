@@ -1,7 +1,7 @@
 <template>
   <div class="bigTriangle lg:col-start-1 lg:row-start-3 justify-self-start lg:self-end"></div>
   <div
-      class="flex flex-row gap-3 z-10 lg:col-start-1 lg:row-start-3 lg:self-end">
+      class="flex flex-row gap-3 pb-3 z-10 lg:col-start-1 lg:row-start-3 lg:self-end">
     <a href="/" class="">
       <img src="assets/src/resources/logoHome1.png" alt="marche" class="h-auto w-28">
     </a>
