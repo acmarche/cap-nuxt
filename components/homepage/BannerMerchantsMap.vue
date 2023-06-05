@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-full mt-12 flex flex-col lg:flex-row text-blue-default items-center justify-start">
+        class="w-full mt-12 lg:mt-0 flex flex-col lg:flex-row text-blue-default items-center justify-start">
       <div class="bg-merchants-map w-full lg:w-3/5 h-60 bg-no-repeat bg-left bg-cover"></div>
       <div class="w-full lg:w-2/5 flex items-center lg:items-start flex-col justify-center gap-3">
         <h3 class="text-2xl font-pathway-bold">DÉCOUVREZ LA CARTE DES COMMERÇANTS</h3>
