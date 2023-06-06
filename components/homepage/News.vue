@@ -33,6 +33,10 @@ import {news} from "~/composables/newsItemsGets"
   </section>
 </template>
 <style>
+.bg-geometric {
+  background-image: url('/assets/src/resources/bg-map-diagonal.png');
+}
+
 a.news-block:hover {
   box-shadow: 0 0 42px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 0 42px 3px rgba(0, 0, 0, 0.2);

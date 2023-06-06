@@ -13,3 +13,8 @@
         </div>
     </section>
 </template>
+<style>
+.bg-checks {
+  background-image: url('/assets/src/resources/bg-cheques3.png');
+}
+</style>

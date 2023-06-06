@@ -13,3 +13,8 @@
       </div>
     </section>
 </template>
+<style>
+.bg-merchants-map {
+  background-image: url('/assets/src/resources/bg-map-diagonal.png');
+}
+</style>

@@ -14,3 +14,8 @@ import LogosCorner from "~/components/homepage/LogosCorner.vue";
       <BannerNewsletter/>
     </section>
 </template>
+<style>
+.bg-hero-pattern {
+  background-image: url('/assets/src/resources/homepageBackground.png');
+}
+</style>

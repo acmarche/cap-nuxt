@@ -16,3 +16,8 @@
       </div>
     </section>
 </template>
+<style>
+.bg-member-became {
+  background-image: url('/assets/src/resources/bg-member-diagonal.png');
+}
+</style>

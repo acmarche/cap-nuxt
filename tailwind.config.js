@@ -51,7 +51,8 @@ module.exports = {
                     lighter: "#4f8ea5",
                     hard: "#0d6efd",
                     small: "#50afd2",
-                    banner: "#9AD7F7"
+                    banner: "#9AD7F7",
+                    search: "#3a87a4"
                 },
                 green: {
                     default: "#A2BE63",
@@ -76,11 +77,6 @@ module.exports = {
             "bottom-left": "bottom left"
         },
       backgroundImage: {
-          'hero-pattern': "url('/assets/src/resources/homepageBackground.png')",
-          'geometric': "url('/assets/src/resources/bg-geometric-left.png')",
-          'checks': "url('/assets/src/resources/bg-cheques3.png')",
-          'merchants-map': "url('/assets/src/resources/bg-map-diagonal.png')",
-          'member-became': "url('/assets/src/resources/bg-member-diagonal.png')",
           'footer-texture': "url('/img/footer-texture.png')",
       }
     },
