@@ -57,18 +57,18 @@ const {data: childs} = useFetch(url)
           </select>
         </div>
 
-      </form>
-
-      <div class="flex flex-row mt-6">
+        <div class="flex flex-row mt-6">
         <span class="text-lg uppercase mr-3">
         OUVERT LE DIMANCHE
         <input type="checkbox" name="open_sunday">
         </span>
-        <span class="text-lg uppercase">
+          <span class="text-lg uppercase">
         OUVERT SUR LE TEMPS DE MIDI
           <input type="checkbox" name="open_noon">
         </span>
-      </div>
+        </div>
+
+      </form>
     </div>
 
   </section>
