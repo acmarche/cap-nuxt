@@ -1,6 +1,6 @@
 <script setup>
 import FormSearchShops from "~/components/shops/FormSearchShops.vue";
-import FichesResult from "~/components/shops/FichesResult.vue";
+import ListResult from "~/components/shops/ListResult.vue";
 import LegendIcones from "~/components/shops/LegendIcones.vue";
 
 definePageMeta({
@@ -14,8 +14,10 @@ const fiches = ref([])
 
 watch(childSelected, async (newchildSelected, oldQuestion) => {
   if (newchildSelected > 0) {
+    console.log(newchildSelected)
     const url = computed(() => `http://api.local/bottin/fiches/rubrique/${newchildSelected}`)
-    const {data: fiches2} = useFetch(url)
+    console.log(url.value)
+    const {data: fiches2} = await useFetch(url.value)
     fiches.value = fiches2.value
   }
 })
@@ -31,7 +33,7 @@ watch(childSelected, async (newchildSelected, oldQuestion) => {
     </div>
 
     <LegendIcones/>
-    <FichesResult :fiches="fiches"/>
+    <ListResult :fiches="fiches"/>
 
   </section>
 </template>
