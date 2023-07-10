@@ -34,7 +34,7 @@ import {news} from "~/composables/newsItemsGets"
 </template>
 <style>
 .bg-geometric {
-  background-image: url('/assets/src/resources/bg-map-diagonal.png');
+  background-image: url('/images/bg-map-diagonal.png');
 }
 
 a.news-block:hover {

@@ -16,6 +16,6 @@ import LogosCorner from "~/components/homepage/LogosCorner.vue";
 </template>
 <style>
 .bg-hero-pattern {
-  background-image: url('/assets/src/resources/homepageBackground.png');
+  background-image: url('/images/homepageBackground.png');
 }
 </style>

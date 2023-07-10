@@ -3,10 +3,10 @@
   <div
       class="flex flex-row gap-3 pb-3 z-10 lg:col-start-1 lg:row-start-3 lg:self-end">
     <a href="/" class="">
-      <img src="assets/src/resources/logoHome1.png" alt="marche" class="h-auto w-28">
+      <img src="/images/logoHome1.png" alt="marche" class="h-auto w-28">
     </a>
     <a href="/">
-      <img src="assets/src/resources/logoHome2.png" alt="adl" class="h-auto w-28">
+      <img src="/images/logoHome2.png" alt="adl" class="h-auto w-28">
     </a>
   </div>
 </template>

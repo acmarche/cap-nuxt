@@ -15,6 +15,6 @@
 </template>
 <style>
 .bg-checks {
-  background-image: url('/assets/src/resources/bg-cheques3.png');
+  background-image: url('/images/bg-cheques3.png');
 }
 </style>

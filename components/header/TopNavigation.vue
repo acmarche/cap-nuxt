@@ -11,7 +11,7 @@ const {mobileMenu = false} = defineProps(['mobileMenu'])
       {{ item.name }}
     </a>
     <a href="/" class="w-6 space-x-6 lg:mr-4">
-      <img src="assets/src/resources/iconLogin.png" alt="login"/>
+      <img src="/images/iconLogin.png" alt="login"/>
     </a>
   </nav>
 </template>

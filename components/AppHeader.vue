@@ -11,7 +11,7 @@ const mobileMenu = ref(false)
       </svg>
     </a>
     <a href="/" class="mr-auto lg:self-center">
-      <img src="assets/src/resources/wholeLogo.png" alt="logo"/>
+      <img src="/images/wholeLogo.png" alt="logo"/>
     </a>
     <TopNavigation :mobileMenu="mobileMenu"/>
   </header>

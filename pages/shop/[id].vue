@@ -3,7 +3,6 @@ import shopGet from "~/composables/shopGet";
 
 const {path, params} = useRoute()
 console.log(params.id)
-const shopId = computed(() => Number(params.shopId || 0))
 
 const {
   pendingShop,
@@ -26,6 +25,10 @@ const shopImage = computed(() => {
   return 'https://cap.marche.be/media/-716383_w1000.jpg'
 })
 
+function prettyPhone(phone) {
+  return `+32${phone}`
+}
+
 </script>
 <template>
   <template v-if="pendingShop">
@@ -34,15 +37,81 @@ const shopImage = computed(() => {
   <template v-if="errorShop" class="text-red-600">
     Error {{ errorShop }}
   </template>
-  <template v-if="shop">
-    <a href="#">
-      <img :src="shopImage" class="w-[410px] h-[244px]"
+  <article v-if="shop">
+    <div class="">
+      <img :src="shopImage" class="w-[1200px] h-[713px]"
            alt="">
-      <div class="flex flex-col bg-grey-white border border-grey-white p-8">
-        <h3 class="text-xl text-grey-shop uppercase font-pathway-semi-bold">{{ shop.societe }}</h3>
-        <h4 class="text-lg text-grey-shop">{{ shop.cap ? shop.cap.commercialWordTitle : 'non' }}</h4>
-        <p> {{ shop.localite }}</p>
-      </div>
-    </a>
-  </template>
+    </div>
+    <div>
+      <p v-if="shop.open_sunday">
+        <a>Ouvert le dimanche <span class=" "></span></a>
+      </p>
+      <p v-if="shop.isMidiOpen">
+        <a>Ouvert à midi <span class=" "></span></a>
+      </p>
+
+      <h2 class="uppercase">
+        <img src="/images/iconContact.png" class="" width="24" height="24"
+             alt="Icone catégorie">
+        Contactez-nous
+      </h2>
+
+      <p v-if="shop.telephone">
+        Par téléphone :
+        <span>
+        {{ prettyPhone(shop.telephone) }}
+      </span>
+      </p>
+      <p v-if="shop.fax">
+        Par fax :
+        <span>
+        {{ prettyPhone(shop.fax) }}
+      </span>
+      </p>
+      <p v-if="shop.gsm">
+        Par Gsm :
+        <span>
+        {{ prettyPhone(shop.gsm) }}
+      </span>
+      </p>
+      <p v-if="shop.vat_number">
+        Numéro de TVA : <span>{{ shop.vat_number }}</span>
+      </p>
+      <p v-if="shop.website">
+        <a :href="shop.website" title="Accédez à notre site">Accéder à notre site</a>
+      </p>
+
+      <p v-if="shop.facebook_link">
+        <a :href="shop.facebook_link" target="_blank" class="" title="Rejoignez-nous sur Facebook">
+          <img src="/images/socialLink1.png" width="37" height="38" alt="Icone social"/></a>
+      </p>
+
+      <p v-if="shop.twitter_link">
+        <a :href="shop.twitter_link" target="_blank" class="" title="Rejoignez-nous sur Twitter">
+          <img src="/images/socialLink2.png" width="37" height="38" alt="Icone social"/>
+        </a>
+      </p>
+
+      <p v-if="shop.linkedin_link">
+        <a :href="shop.linkedin_link" target="_blank" class="" title="Rejoignez-nous sur Linkedin">
+          <img src="/images/socialLink3.png" width="37" height="38" alt="Icone social"/>
+        </a>
+      </p>
+
+      <h2 class="uppercase">
+        <img src="/images/iconHeure.png" class=" " width="29" height="28"
+             alt="Icone catégorie">
+        Heures d'ouverture
+      </h2>
+      <h2 class="uppercase">
+        <img src="/images/iconAdresse.png" class=" " width="30" height="30"
+             alt="Icone catégorie">
+        Adresse
+      </h2>
+
+      <a href="#map" id="goToMap" title="Accéder à la map" class="scrollTo">
+        Voir sur la carte
+      </a>
+    </div>
+  </article>
 </template>

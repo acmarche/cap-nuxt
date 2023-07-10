@@ -18,6 +18,6 @@
 </template>
 <style>
 .bg-member-became {
-  background-image: url('/assets/src/resources/bg-member-diagonal.png');
+  background-image: url('/images/bg-member-diagonal.png');
 }
 </style>

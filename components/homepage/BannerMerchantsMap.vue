@@ -15,6 +15,6 @@
 </template>
 <style>
 .bg-merchants-map {
-  background-image: url('/assets/src/resources/bg-map-diagonal.png');
+  background-image: url('/images/bg-map-diagonal.png');
 }
 </style>

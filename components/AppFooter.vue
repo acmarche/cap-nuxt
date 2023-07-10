@@ -55,10 +55,10 @@ const events = [
         </ul>
         <div class="flex gap-2 items-center ml-4">
           <a href="/" class="bg-green-default flex items-end justify-center h-10 w-10">
-            <img src="assets/src/resources/icon-facebook.png" alt="facebook" class="block h-8  object-none">
+            <img src="/images/icon-facebook.png" alt="facebook" class="block h-8  object-none">
           </a>
           <a href="/" class="bg-green-default flex items-end justify-center h-10 w-10">
-            <img src="assets/src/resources/icon-instagram.png" alt="instagram" class="h-8 object-none">
+            <img src="/images/icon-instagram.png" alt="instagram" class="h-8 object-none">
           </a>
         </div>
       </div>
@@ -74,10 +74,10 @@ const events = [
         </span>
           <div class="flex gap-2 items-center mt-2">
             <a href="/">
-              <img src="assets/src/resources/logoHome1.png" alt="marche.be" class="h-16">
+              <img src="/images/logoHome1.png" alt="marche.be" class="h-16">
             </a>
             <a href="/">
-              <img src="assets/src/resources/logoHome2.png" alt="adl" class="h-16">
+              <img src="/images/logoHome2.png" alt="adl" class="h-16">
             </a>
           </div>
         </div>
