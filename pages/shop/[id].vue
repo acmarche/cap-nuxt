@@ -1,5 +1,6 @@
 <script setup>
 import shopGet from "~/composables/shopGet";
+import Hours from "~/components/shop/Hours.vue";
 
 const {path, params} = useRoute()
 console.log(params.id)
@@ -38,6 +39,7 @@ function prettyPhone(phone) {
     Error {{ errorShop }}
   </template>
   <article v-if="shop">
+    <h1>{{ shop.societe }}</h1>
     <div class="">
       <img :src="shopImage" class="w-[1200px] h-[713px]"
            alt="">
@@ -103,6 +105,7 @@ function prettyPhone(phone) {
              alt="Icone catégorie">
         Heures d'ouverture
       </h2>
+      <Hours :shop="shop"/>
       <h2 class="uppercase">
         <img src="/images/iconAdresse.png" class=" " width="30" height="30"
              alt="Icone catégorie">
@@ -112,6 +115,7 @@ function prettyPhone(phone) {
       <a href="#map" id="goToMap" title="Accéder à la map" class="scrollTo">
         Voir sur la carte
       </a>
+
     </div>
   </article>
 </template>
