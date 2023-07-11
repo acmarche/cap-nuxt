@@ -37,9 +37,16 @@ const daysName = [
 ]
 </script>
 <template>
+
+  <h2 class="flex flex-row gap-2 mt-2">
+    <img src="/images/iconHeure.png" class=" " width="29" height="28"
+         alt="Icone catégorie">
+    <span class="uppercase">Heures d'ouverture</span>
+  </h2>
+
   <div v-if="shop.cap.hours.length > 0">
     <span itemprop="legalName" :content="shop.societe"></span>
-    <div class="infoPart" id="ankleTime">
+    <div class="" id="ankleTime">
       <h2>
         <img src="/images/iconHeure.png" class="" width="29" height="28" alt="Icone catégorie"/>
         {{ titleHours }}
@@ -68,9 +75,9 @@ const daysName = [
 
   </div>
 
-  <div class="infoPart" v-if="hasHours">
+  <div class="" v-if="hasHours">
     <h2>
-      <img src="/images/iconHeure.png" class="noBackgroundForThis" width="29" height="28"
+      <img src="/images/iconHeure.png" class="" width="29" height="28"
            alt="Icone catégorie"/>Heures d’ouverture
     </h2>
 
@@ -80,9 +87,9 @@ const daysName = [
 
   </div>
 
-  <div class="infoPart" v-if="shop.comment3">
+  <div class="" v-if="shop.comment3">
     <h2>
-      <img src="/images/iconHeure.png" class="noBackgroundForThis" width="29" height="28"
+      <img src="/images/iconHeure.png" class="" width="29" height="28"
            alt="Icone catégorie"/>
       Heures d’ouverture via commnentaire
     </h2>

@@ -1,6 +1,7 @@
 <script setup>
 import shopGet from "~/composables/shopGet";
-import Hours from "~/components/shop/Hours.vue";
+import OpeningHours from "~/components/shop/OpeningHours.vue";
+import Contact from "~/components/shop/Contact.vue";
 
 const {path, params} = useRoute()
 console.log(params.id)
@@ -12,8 +13,11 @@ const {
 } = shopGet(params.id);
 
 const shopImage = computed(() => {
+  //console.log(shop.cap.profileMediaPath)
   if (shop.cap) {
-    if (shop.cap.profileMediaPath !== null) {
+    console.log(123)
+    console.log(shop.cap.profileMediaPath)
+    if (shop.cap.profileMediaPath) {
       return `https://cap.marche.be/${shop.cap.profileMediaPath}`
     }
     if (shop.cap.images.length > 0) {
@@ -25,11 +29,6 @@ const shopImage = computed(() => {
   }
   return 'https://cap.marche.be/media/-716383_w1000.jpg'
 })
-
-function prettyPhone(phone) {
-  return `+32${phone}`
-}
-
 </script>
 <template>
   <template v-if="pendingShop">
@@ -40,82 +39,57 @@ function prettyPhone(phone) {
   </template>
   <article v-if="shop">
     <h1>{{ shop.societe }}</h1>
-    <div class="">
+    <div class="grid grid-cols-2 w-full">
       <img :src="shopImage" class="w-[1200px] h-[713px]"
            alt="">
+      <div class="bgRight text-white p-5">
+        <p v-if="shop.open_sunday">
+          <a>Ouvert le dimanche <span class=" "></span></a>
+        </p>
+        <p v-if="shop.isMidiOpen">
+          <a>Ouvert à midi <span class=" "></span></a>
+        </p>
+
+        <Contact :shop="shop"/>
+
+        <OpeningHours :shop="shop"/>
+
+        <h2 class="flex flex-row gap-2">
+          <img src="/images/iconAdresse.png" class=" " width="30" height="30"
+               alt="Icone catégorie">
+          <span class="uppercase">Adresse</span>
+        </h2>
+
+        <a href="#map" id="goToMap" title="Accéder à la map" class="scrollTo">
+          Voir sur la carte
+        </a>
+      </div>
     </div>
-    <div>
-      <p v-if="shop.open_sunday">
-        <a>Ouvert le dimanche <span class=" "></span></a>
-      </p>
-      <p v-if="shop.isMidiOpen">
-        <a>Ouvert à midi <span class=" "></span></a>
-      </p>
-
-      <h2 class="uppercase">
-        <img src="/images/iconContact.png" class="" width="24" height="24"
-             alt="Icone catégorie">
-        Contactez-nous
-      </h2>
-
-      <p v-if="shop.telephone">
-        Par téléphone :
-        <span>
-        {{ prettyPhone(shop.telephone) }}
-      </span>
-      </p>
-      <p v-if="shop.fax">
-        Par fax :
-        <span>
-        {{ prettyPhone(shop.fax) }}
-      </span>
-      </p>
-      <p v-if="shop.gsm">
-        Par Gsm :
-        <span>
-        {{ prettyPhone(shop.gsm) }}
-      </span>
-      </p>
-      <p v-if="shop.vat_number">
-        Numéro de TVA : <span>{{ shop.vat_number }}</span>
-      </p>
-      <p v-if="shop.website">
-        <a :href="shop.website" title="Accédez à notre site">Accéder à notre site</a>
-      </p>
-
-      <p v-if="shop.facebook_link">
-        <a :href="shop.facebook_link" target="_blank" class="" title="Rejoignez-nous sur Facebook">
-          <img src="/images/socialLink1.png" width="37" height="38" alt="Icone social"/></a>
-      </p>
-
-      <p v-if="shop.twitter_link">
-        <a :href="shop.twitter_link" target="_blank" class="" title="Rejoignez-nous sur Twitter">
-          <img src="/images/socialLink2.png" width="37" height="38" alt="Icone social"/>
-        </a>
-      </p>
-
-      <p v-if="shop.linkedin_link">
-        <a :href="shop.linkedin_link" target="_blank" class="" title="Rejoignez-nous sur Linkedin">
-          <img src="/images/socialLink3.png" width="37" height="38" alt="Icone social"/>
-        </a>
-      </p>
-
-      <h2 class="uppercase">
-        <img src="/images/iconHeure.png" class=" " width="29" height="28"
-             alt="Icone catégorie">
-        Heures d'ouverture
-      </h2>
-      <Hours :shop="shop"/>
-      <h2 class="uppercase">
-        <img src="/images/iconAdresse.png" class=" " width="30" height="30"
-             alt="Icone catégorie">
-        Adresse
-      </h2>
-
-      <a href="#map" id="goToMap" title="Accéder à la map" class="scrollTo">
-        Voir sur la carte
-      </a>
-
+    <div id="middlePart" class="my-5">
+      <h2 class="text-3xl m-3">{{ shop.cap.commercialWordTitle }}</h2>
+      <p>{{ shop.cap.commercialWordDescription }}</p>
+      <p>{{ shop.cap.website }}</p>
+      <p>{{ shop.cap.email }}</p>
+      <p>{{ shop.cap.cta_title }}</p>
     </div>
   </article>
 </template>
+<style>
+.bgRight {
+  background-image: url('/images/rightPartBackground.png');
+  width: 430px;
+  height: 100%;
+  display: block;
+  background-color: #4f8ea5;
+  position: relative;
+  background-size: cover;
+}
+
+#middlePart {
+  padding: 48px 51px;
+  background-image: url('/images/middleCrystal.png');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+</style>
