@@ -2,6 +2,7 @@
 import shopGet from "~/composables/shopGet";
 import OpeningHours from "~/components/shop/OpeningHours.vue";
 import Contact from "~/components/shop/Contact.vue";
+import Address from "~/components/shop/Address.vue";
 
 const {path, params} = useRoute()
 console.log(params.id)
@@ -39,10 +40,10 @@ const shopImage = computed(() => {
   </template>
   <article v-if="shop">
     <h1>{{ shop.societe }}</h1>
-    <div class="grid grid-cols-2 w-full">
-      <img :src="shopImage" class="w-[1200px] h-[713px]"
+    <div class="grid grid-cols-[70%_30%] w-full">
+      <img :src="shopImage" class="w-full"
            alt="">
-      <div class="bgRight text-white p-5">
+      <div class="bgRight text-white p-5 w-full">
         <p v-if="shop.open_sunday">
           <a>Ouvert le dimanche <span class=" "></span></a>
         </p>
@@ -51,18 +52,9 @@ const shopImage = computed(() => {
         </p>
 
         <Contact :shop="shop"/>
-
         <OpeningHours :shop="shop"/>
+        <Address :shop="shop"/>
 
-        <h2 class="flex flex-row gap-2">
-          <img src="/images/iconAdresse.png" class=" " width="30" height="30"
-               alt="Icone catégorie">
-          <span class="uppercase">Adresse</span>
-        </h2>
-
-        <a href="#map" id="goToMap" title="Accéder à la map" class="scrollTo">
-          Voir sur la carte
-        </a>
       </div>
     </div>
     <div id="middlePart" class="my-5">
@@ -77,12 +69,7 @@ const shopImage = computed(() => {
 <style>
 .bgRight {
   background-image: url('/images/rightPartBackground.png');
-  width: 430px;
-  height: 100%;
-  display: block;
   background-color: #4f8ea5;
-  position: relative;
-  background-size: cover;
 }
 
 #middlePart {

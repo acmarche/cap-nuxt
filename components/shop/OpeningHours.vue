@@ -2,7 +2,7 @@
 const {shop} = defineProps<{
   shop: { type: Object, required: true },
 }>()
-const isH = computed(() => shop.cap.hours_type_name && shop.cap.hours_type_id)
+const isH = computed(() => shop.cap.hoursTypeName && shop.cap.hoursTypeId)
 const hasHours = computed(() => shop.horaires && shop.horaires.type === Array && shop.horaires.length > 0)
 
 //select * from commercio_commercant_hours where commercio_commercant_id = 69
@@ -15,13 +15,13 @@ function displayClosedAtLunch(day: object): boolean {
 
 const titleHours = computed(function () {
   if (isH.value === false) return ''
-  switch (shop.cap.hours_type_id) {
+  switch (shop.cap.hoursType.id) {
     case 2 :
       return 'Heures d\'ouverture'
     case 1 :
       return 'Heures de consultations'
     default :
-      return 'Heures'
+      return 'Heures d\'ouverture'
   }
 })
 
@@ -41,20 +41,11 @@ const daysName = [
   <h2 class="flex flex-row gap-2 mt-2">
     <img src="/images/iconHeure.png" class=" " width="29" height="28"
          alt="Icone catégorie">
-    <span class="uppercase">Heures d'ouverture</span>
+    <span class="uppercase">{{ titleHours }}</span>
   </h2>
 
-  <div v-if="shop.cap.hours.length > 0">
-    <span itemprop="legalName" :content="shop.societe"></span>
-    <div class="" id="ankleTime">
-      <h2>
-        <img src="/images/iconHeure.png" class="" width="29" height="28" alt="Icone catégorie"/>
-        {{ titleHours }}
-      </h2>
-    </div>
-  </div>
-
-  <div itemprop="openingHoursSpecification" itemtype="http://schema.org/OpeningHoursSpecification" itemscope>
+  <div v-if="shop.cap.hours.length > 0" itemprop="openingHoursSpecification"
+       itemtype="http://schema.org/OpeningHoursSpecification" itemscope>
 
     <ul class="">
       <li v-for="day in shop.cap.hours" :key="day.id" class="flex justify-between w-full">
