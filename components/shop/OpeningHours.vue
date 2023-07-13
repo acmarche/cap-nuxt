@@ -38,7 +38,7 @@ const daysName = [
 </script>
 <template>
 
-  <h2 class="flex flex-row gap-2 mt-2">
+  <h2 class="flex flex-row gap-2 my-3">
     <img src="/images/iconHeure.png" class=" " width="29" height="28"
          alt="Icone catégorie">
     <span class="uppercase">{{ titleHours }}</span>
@@ -48,7 +48,7 @@ const daysName = [
        itemtype="http://schema.org/OpeningHoursSpecification" itemscope>
 
     <ul class="">
-      <li v-for="day in shop.cap.hours" :key="day.id" class="flex justify-between w-full">
+      <li v-for="day in shop.cap.hours" :key="day.id" class="flex justify-between w-full p-2">
         <div class="font-extrabold">
           {{ daysName[day.day] }}
         </div>
@@ -80,8 +80,6 @@ const daysName = [
 
   <div class="" v-if="shop.comment3">
     <h2>
-      <img src="/images/iconHeure.png" class="" width="29" height="28"
-           alt="Icone catégorie"/>
       Heures d’ouverture via commnentaire
     </h2>
     <p v-text="shop.comment3"></p>

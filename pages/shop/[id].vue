@@ -3,6 +3,9 @@ import shopGet from "~/composables/shopGet";
 import OpeningHours from "~/components/shop/OpeningHours.vue";
 import Contact from "~/components/shop/Contact.vue";
 import Address from "~/components/shop/Address.vue";
+import MiddlePart from "~/components/shop/MiddlePart.vue";
+import BannerCheck from "~/components/shop/BannerCheck.vue";
+import MemberCap from "~/components/shop/MemberCap.vue";
 
 const {path, params} = useRoute()
 console.log(params.id)
@@ -28,7 +31,7 @@ const shopImage = computed(() => {
   if (shop.photos && shop.photos.length > 0) {
     return shop.photos[0]
   }
-  return 'https://cap.marche.be/media/-716383_w1000.jpg'
+  return 'https://cap.marche.be/media/9-grains-dor-11-of-152.jpg'
 })
 </script>
 <template>
@@ -57,13 +60,9 @@ const shopImage = computed(() => {
 
       </div>
     </div>
-    <div id="middlePart" class="my-5">
-      <h2 class="text-3xl m-3">{{ shop.cap.commercialWordTitle }}</h2>
-      <p>{{ shop.cap.commercialWordDescription }}</p>
-      <p>{{ shop.cap.website }}</p>
-      <p>{{ shop.cap.email }}</p>
-      <p>{{ shop.cap.cta_title }}</p>
-    </div>
+    <MiddlePart :shop="shop"/>
+    <BannerCheck/>
+    <MemberCap/>
   </article>
 </template>
 <style>

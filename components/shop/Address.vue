@@ -4,7 +4,7 @@ const {shop} = defineProps<{
 }>()
 </script>
 <template>
-  <h2 class="flex flex-row gap-2">
+  <h2 class="flex flex-row gap-2 my-3">
     <img src="/images/iconAdresse.png" class=" " width="30" height="30"
          alt="Icone catégorie">
     <span class="uppercase">Adresse</span>
@@ -14,8 +14,8 @@ const {shop} = defineProps<{
 
     <span itemprop="streetAddress">{{ shop.rue }} {{ shop.numero }}</span>
     <div>
-      <span class="noFloat" itemprop="postalCode">{{ shop.cp }}</span>
-      <span class="noFloat" itemprop="addressLocality">{{ shop.localite }}</span>
+      <span class="" itemprop="postalCode">{{ shop.cp }}</span>
+      <span class="" itemprop="addressLocality">{{ shop.localite }}</span>
     </div>
   </a>
 
