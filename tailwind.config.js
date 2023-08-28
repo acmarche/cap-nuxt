@@ -63,10 +63,11 @@ module.exports = {
                 grey: {
                     dark: "#707070",
                     footer: "#797979",
-                    d: "#6c6b6b",
+                    shop: "#6c6b6b",
                     e: "#828080",
                     light: "#F8F8F8",
-                    lighter: "#ededec"
+                    lighter: "#ededec",
+                    white: "#fefefc"
                 },
             }
         },
@@ -76,9 +77,9 @@ module.exports = {
             "bottom-center": "bottom center",
             "bottom-left": "bottom left"
         },
-      backgroundImage: {
-          'footer-texture': "url('/img/footer-texture.png')",
-      }
+        backgroundImage: {
+            'footer-texture': "url('/img/footer-texture.png')",
+        }
     },
     plugins: [
         require("@tailwindcss/forms"),
