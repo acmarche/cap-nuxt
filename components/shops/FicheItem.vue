@@ -35,7 +35,7 @@ const shopImageOver = computed(() => {
 </script>
 <template>
   <NuxtLink :to="`shop/${fiche.id}`" class="block h-64 w-96 ">
-    <div class="grid [grid-template-areas:block] h-64 w-96  group">
+    <div class="grid [grid-template-areas:block] justify-center items-center h-64 w-96  group">
       <div
           class="[grid-area:block] h-64 w-96  bg-center bg-no-repeat bg-cover"
           :style="`background-image:url(${shopImage})`">

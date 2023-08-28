@@ -1,6 +1,4 @@
 <script setup>
-import Copyright from "~/components/footer/Copyright.vue";
-
 const links = [
   {name: 'Accueil', url: '/', id: 1},
   {name: 'Commerces', url: '/', id: 2},
@@ -84,6 +82,6 @@ const events = [
       </div>
     </div>
 
-    <Copyright/>
+    <FooterCopyright/>
   </footer>
 </template>

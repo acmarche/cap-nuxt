@@ -1,6 +1,5 @@
 <!-- https://dribbble.com/ -->
 <script setup lang="ts">
-import IconSearch from "~/components/Icons/IconSearch.vue";
 </script>
 <template>
   <form name="searching"
@@ -19,7 +18,7 @@ import IconSearch from "~/components/Icons/IconSearch.vue";
     <button
         type="submit"
         class="i-search relative right-12 top-0 h-16 w-16 bg-blue-default rounded-r-md">
-      <IconSearch :class="'text-white flex mx-auto'"/>
+      <IconsIconSearch :class="'text-white flex mx-auto'"/>
     </button>
   </form>
 </template>

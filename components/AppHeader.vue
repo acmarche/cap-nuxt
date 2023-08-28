@@ -1,5 +1,4 @@
 <script setup>
-import TopNavigation from "~/components/header/TopNavigation.vue";
 const mobileMenu = ref(false)
 </script>
 <template>
@@ -13,6 +12,6 @@ const mobileMenu = ref(false)
     <a href="/" class="mr-auto lg:self-center">
       <img src="/images/wholeLogo.png" alt="logo"/>
     </a>
-    <TopNavigation :mobileMenu="mobileMenu"/>
+    <HeaderTopNavigation :mobileMenu="mobileMenu"/>
   </header>
 </template>

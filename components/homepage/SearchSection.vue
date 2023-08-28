@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import FormSearch from "~/components/homepage/FormSearch.vue";
-import BannerNewsletter from "~/components/homepage/BannerNewsletterV2.vue";
-import LogosCorner from "~/components/homepage/LogosCorner.vue";
 </script>
 <template>
     <section
@@ -9,9 +6,9 @@ import LogosCorner from "~/components/homepage/LogosCorner.vue";
       <h1 class="pb-6 pt-28 lg:pt-6 text-center text-2xl lg:text-4xl text-white font-pathway-semi-bold lg:col-span-2">
         DÉCOUVREZ VOS ENTREPRISES ET COMMERÇANTS MARCHOIS
       </h1>
-      <FormSearch/>
-      <LogosCorner/>
-      <BannerNewsletter/>
+      <HomepageFormSearch/>
+      <HomepageLogosCorner/>
+      <HomepageBannerNewsletter/>
     </section>
 </template>
 <style>

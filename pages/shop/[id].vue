@@ -1,15 +1,5 @@
 <script setup>
-import shopGet from "~/composables/shopGet";
-import OpeningHours from "~/components/shop/OpeningHours.vue";
-import Contact from "~/components/shop/Contact.vue";
-import Address from "~/components/shop/Address.vue";
-import MiddlePart from "~/components/shop/MiddlePart.vue";
-import BannerCheck from "~/components/shop/BannerCheck.vue";
-import MemberCap from "~/components/shop/MemberCap.vue";
-
 const {path, params} = useRoute()
-console.log(params.id)
-
 const {
   pendingShop,
   shop,
@@ -54,15 +44,15 @@ const shopImage = computed(() => {
           <a>Ouvert à midi <span class=" "></span></a>
         </p>
 
-        <Contact :shop="shop"/>
-        <OpeningHours :shop="shop"/>
-        <Address :shop="shop"/>
+        <ShopContact :shop="shop"/>
+        <ShopOpeningHours :shop="shop"/>
+        <ShopAddress :shop="shop"/>
 
       </div>
     </div>
-    <MiddlePart :shop="shop"/>
-    <BannerCheck/>
-    <MemberCap/>
+    <ShopMiddlePart :shop="shop"/>
+    <ShopBannerCheck/>
+    <ShopMemberCap/>
   </article>
 </template>
 <style>
