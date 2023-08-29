@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {MagnifyingGlassIcon} from '@heroicons/vue/20/solid'
+import {IconSearch} from '@tabler/icons-vue';
 
 const {shop} = defineProps<{
   shop: { type: Object, required: true },
@@ -16,19 +16,19 @@ const {shop} = defineProps<{
         <h1 class="text-3xl font-pathway-semi-bold">
           {{ shop.societe }}
         </h1>
-        <ShopBreadcumb/>
+        <ShopBreadcumb :shop="shop"/>
       </div>
       <div class="ml-auto flex flex-row items-center font-pathway-semi-bold text-lg space-x-4">
-        <a href="https://cap.marche.be//cap-sur-marche" title="À propos de nous" class="">
-          À propos
+        <a href="/tous-les-commerces" title="À propos de nous" class="">
+          Commerces
         </a>
-        <a href="#map" title="Trouvez-nous sur la carte !" class="">
-          Nous trouver
+        <a href="/secteurs" title="Trouvez-nous sur la carte !" class="">
+          Secteurs
         </a>
         <form class="flex flex-row items-center">
-          <MagnifyingGlassIcon class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
+          <IconSearch class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
           <input
-              autocomplete="off" id="commerceSearchInput" placeholder="Rechercher un commerçant" type="search">
+              autocomplete="off" placeholder="Rechercher un commerçant" type="search" class="w-72">
         </form>
         <a href="/" title="Retour à la page d'accueil">
           <img src="https://cap.marche.be/templates/commercio/resources/rightCorner2.png" width="164" height="148"

@@ -1,4 +1,7 @@
 <script setup>
+definePageMeta({
+  layout: 'noheaderlayout',
+})
 const {path, params} = useRoute()
 const {
   pendingShop,
@@ -31,8 +34,8 @@ const shopImage = computed(() => {
   <template v-if="errorShop" class="text-red-600">
     Error {{ errorShop }}
   </template>
-  <ShopHeader :shop="shop"/>
   <article v-if="shop">
+    <ShopHeader :shop="shop"/>
     <div class="grid grid-cols-[70%_30%] w-full">
       <img :src="shopImage" class="w-full"
            alt="">
@@ -53,6 +56,7 @@ const shopImage = computed(() => {
     <ShopMiddlePart :shop="shop"/>
     <ShopBannerCheck/>
     <ShopMemberCap/>
+    <ShopGallerie :shop="shop"/>
   </article>
 </template>
 <style>
@@ -60,12 +64,4 @@ const shopImage = computed(() => {
   background-image: url('/images/rightPartBackground.png');
   background-color: #4f8ea5;
 }
-
-#middlePart {
-  padding: 48px 51px;
-  background-image: url('/images/middleCrystal.png');
-  background-position: right bottom;
-  background-repeat: no-repeat;
-}
-
 </style>

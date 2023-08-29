@@ -60,6 +60,7 @@ module.exports = {
                     light: '#94af4d',
                     lighter: '#a8c564',
                     checks: '#00d19f',
+                    btn: '#a3be62',
                 },
                 grey: {
                     dark: '#707070',
