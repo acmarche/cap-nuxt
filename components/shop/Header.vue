@@ -25,10 +25,11 @@ const {shop} = defineProps<{
         <a href="/secteurs" title="Trouvez-nous sur la carte !" class="">
           Secteurs
         </a>
-        <form class="flex flex-row items-center">
-          <IconSearch class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
+        <form class="flex flex-row items-center relative">
+          <IconSearch class="h-5 w-5 flex-shrink-0 text-gray-400 top-3 left-2 absolute" aria-hidden="true"/>
           <input
-              autocomplete="off" placeholder="Rechercher un commerçant" type="search" class="w-72">
+              autocomplete="off" placeholder="Rechercher un commerçant" type="search"
+              class="text-base font-pathway-regular w-72 bg-grey-light border-0 rounded-lg pl-8">
         </form>
         <a href="/" title="Retour à la page d'accueil">
           <img src="https://cap.marche.be/templates/commercio/resources/rightCorner2.png" width="164" height="148"

@@ -1,42 +1,43 @@
 <script setup lang="ts">
+import {IconPhone} from '@tabler/icons-vue';
+
 const {shop} = defineProps<{
   shop: { type: Object, required: true },
 }>()
 
 function prettyPhone(phone: string) {
-  return `+32${phone}`
+  return `+32 ${phone}`
 }
 </script>
 <template>
   <h2 class="text-xl uppercase flex flex-row gap-2 font-pathway-semi-bold m-3">
-    <img src="/images/iconContact.png" class="" width="24" height="24"
-         alt="Icone catégorie">
+    <IconPhone class="h-5 w-5 flex-shrink-0 text-white" aria-hidden="true"/>
     <span class="uppercase">Contactez-nous</span>
   </h2>
 
   <p v-if="shop.cap.legalPhone" class="flex flex-row justify-between p-2">
     <span>Par téléphone :</span>
-    <span>
+    <span class="">
         {{ prettyPhone(shop.cap.legalPhone) }}
       </span>
   </p>
 
   <p v-if="shop.fax" class="flex flex-row justify-between p-2">
     <span>Par fax :</span>
-    <span>
+    <span class="">
         {{ prettyPhone(shop.fax) }}
       </span>
   </p>
 
   <p v-if="shop.gsm" class="flex flex-row justify-between p-2">
     <span> Par Gsm :</span>
-    <span>
+    <span class="">
         {{ prettyPhone(shop.gsm) }}
       </span>
   </p>
 
   <p v-if="shop.cap.vatNumber" class="flex flex-row justify-between p-2">
-    <span>Numéro de TVA :</span> <span>{{ shop.cap.vatNumber }}</span>
+    <span>Numéro de TVA :</span> <span class="">{{ shop.cap.vatNumber }}</span>
   </p>
 
   <p v-if="shop.email" class="flex flex-row justify-between p-2">
