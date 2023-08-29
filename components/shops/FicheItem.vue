@@ -33,7 +33,7 @@ const shopImageOver = computed(() => {
 })
 
 function hasCommercialWordTitle() {
-  if (propos.fiche.cap) {
+  if (propos.fiche.cap != null) {
     return propos.fiche.cap.commercialWordTitle.length > 0
   }
   return false
@@ -42,7 +42,7 @@ function hasCommercialWordTitle() {
 </script>
 <template>
   <article class="group">
-    <NuxtLink :to="`shop/${fiche.id}`">
+    <NuxtLink :to="`/shop/${fiche.id}`">
       <div class="grid [grid-template-areas:block] justify-center items-center h-64">
         <div
             class="[grid-area:block] h-64 w-96 bg-center bg-no-repeat bg-cover"
@@ -60,7 +60,7 @@ function hasCommercialWordTitle() {
           class="flex flex-col bg-grey-white border border-grey-white p-4 group-hover:bg-grey-tt group-hover:border-blue-small">
         <h3 class="text-2xl text-grey-shop uppercase font-pathway-semi-bold">{{ propos.fiche.societe }}</h3>
         <h4 class="text-lg text-grey-shop font-pathway-semi-bold" v-if="hasCommercialWordTitle">
-          {{ propos.fiche.cap.commercialWordTitle }}
+          {{ propos.fiche?.cap?.commercialWordTitle }}
         </h4>
         <p> {{ propos.fiche.localite }}</p>
       </div>
