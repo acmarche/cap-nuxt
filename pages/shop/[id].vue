@@ -31,8 +31,8 @@ const shopImage = computed(() => {
   <template v-if="errorShop" class="text-red-600">
     Error {{ errorShop }}
   </template>
+  <ShopHeader :shop="shop"/>
   <article v-if="shop">
-    <h1>{{ shop.societe }}</h1>
     <div class="grid grid-cols-[70%_30%] w-full">
       <img :src="shopImage" class="w-full"
            alt="">
