@@ -10,61 +10,70 @@ function prettyPhone(phone: string) {
 }
 </script>
 <template>
-  <h2 class="text-xl uppercase flex flex-row gap-2 font-pathway-semi-bold m-3">
-    <IconPhone class="h-5 w-5 flex-shrink-0 text-white" aria-hidden="true"/>
-    <span class="uppercase">Contactez-nous</span>
-  </h2>
+  <section class="">
+    <h2 class="text-xl uppercase flex flex-row gap-2 font-pathway-semi-bold m-3">
+      <IconPhone class="h-8 w-8 flex-shrink-0 text-white " aria-hidden="true"/>
+      <span class="uppercase">Contactez-nous</span>
+    </h2>
 
-  <p v-if="shop.cap.legalPhone" class="flex flex-row justify-between p-2">
-    <span>Par téléphone :</span>
-    <span class="">
+    <p v-if="shop.cap.legalPhone" class="flex flex-row justify-between p-2">
+      <span>Par téléphone :</span>
+      <span class="">
         {{ prettyPhone(shop.cap.legalPhone) }}
       </span>
-  </p>
+    </p>
 
-  <p v-if="shop.fax" class="flex flex-row justify-between p-2">
-    <span>Par fax :</span>
-    <span class="">
+    <p v-if="shop.fax" class="flex flex-row justify-between p-2">
+      <span>Par fax :</span>
+      <span class="">
         {{ prettyPhone(shop.fax) }}
       </span>
-  </p>
+    </p>
 
-  <p v-if="shop.gsm" class="flex flex-row justify-between p-2">
-    <span> Par Gsm :</span>
-    <span class="">
+    <p v-if="shop.gsm" class="flex flex-row justify-between p-2">
+      <span> Par Gsm :</span>
+      <span class="">
         {{ prettyPhone(shop.gsm) }}
       </span>
-  </p>
+    </p>
 
-  <p v-if="shop.cap.vatNumber" class="flex flex-row justify-between p-2">
-    <span>Numéro de TVA :</span> <span class="">{{ shop.cap.vatNumber }}</span>
-  </p>
+    <p v-if="shop.cap.vatNumber" class="flex flex-row justify-between p-2">
+      <span>Numéro de TVA :</span> <span class="">{{ shop.cap.vatNumber }}</span>
+    </p>
 
-  <p v-if="shop.email" class="flex flex-row justify-between p-2">
-    <span>Par email :</span> <a :href="`mailto:${shop.email}`">{{ shop.email }}</a>
-  </p>
+    <p v-if="shop.email" class="flex flex-row justify-between p-2">
+      <span>Par email :</span> <a :href="`mailto:${shop.email}`" class="hover:text-white hover:opacity-80">{{
+        shop.email
+      }}</a>
+    </p>
 
-  <div class="flex flex-row items-center gap-2">
+    <div class="flex flex-row items-center gap-2 justify-between">
 
-    <a v-if="shop.website" :href="shop.website" class="block p-3 bg-white text-blue-default"
-       title="Accédez à notre site">Accéder à notre site
-    </a>
+      <a v-if="shop.website" :href="shop.website"
+         class="hover:text-green-default hover:opacity-80 p-3 bg-white text-blue-default"
+         title="Accédez à notre site">Accéder à notre site
+      </a>
 
-    <a v-if="shop.cap.facebookLink" class="p-2" :href="shop.cap.facebookLink" target="_blank"
-       title="Rejoignez-nous sur Facebook">
-      <img src="/images/socialLink1.png" width="37" height="38" alt="Icone social"/>
-    </a>
+      <div class="flex flex-row">
+        <a v-if="shop.cap.facebookLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.facebookLink"
+           target="_blank"
+           title="Rejoignez-nous sur Facebook">
+          <img src="/images/socialLink1.png" width="37" height="38" alt="Icone social"/>
+        </a>
 
-    <a v-if="shop.cap.twitterLink" class="p-2" :href="shop.cap.twitterLink" target="_blank"
-       title="Rejoignez-nous sur Twitter">
-      <img src="/images/socialLink2.png" width="37" height="38" alt="Icone social"/>
-    </a>
+        <a v-if="shop.cap.twitterLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.twitterLink"
+           target="_blank"
+           title="Rejoignez-nous sur Twitter">
+          <img src="/images/socialLink2.png" width="37" height="38" alt="Icone social"/>
+        </a>
 
-    <a v-if="shop.cap.linkedinLink" class="p-2" :href="shop.cap.linkedinLink" target="_blank"
-       title="Rejoignez-nous sur Linkedin">
-      <img src="/images/socialLink3.png" width="37" height="38" alt="Icone social"/>
-    </a>
+        <a v-if="shop.cap.linkedinLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.linkedinLink"
+           target="_blank"
+           title="Rejoignez-nous sur Linkedin">
+          <img src="/images/socialLink3.png" width="37" height="38" alt="Icone social"/>
+        </a>
+      </div>
 
-  </div>
-
+    </div>
+  </section>
 </template>

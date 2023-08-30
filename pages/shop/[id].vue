@@ -39,7 +39,7 @@ const shopImage = computed(() => {
     <div class="grid grid-cols-[70%_30%] w-full">
       <img :src="shopImage" class="w-full"
            alt="">
-      <div class="bgRight text-white p-5 w-full">
+      <div class="bg-right text-white p-5 w-full">
         <p v-if="shop.open_sunday">
           <a>Ouvert le dimanche <span class=" "></span></a>
         </p>
@@ -60,7 +60,7 @@ const shopImage = computed(() => {
   </article>
 </template>
 <style>
-.bgRight {
+.bg-right {
   background-image: url('/images/rightPartBackground.png');
   background-color: #4f8ea5;
 }

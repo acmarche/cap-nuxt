@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {IconMap, IconWheelchair} from '@tabler/icons-vue';
+
 const {shop} = defineProps<{
   shop: { type: Object, required: true },
 }>()
@@ -9,9 +11,8 @@ const {shop} = defineProps<{
          alt="Icone catégorie">
     <span class="uppercase">Adresse</span>
   </h2>
-  <a title="lien vers la page google" target="_blank"
+  <a title="lien vers la page google" target="_blank" class="block mb-3"
      :href="`http://maps.google.com/?q=${shop.latitude}&${shop.longitude}`">
-
     <span itemprop="streetAddress">{{ shop.rue }} {{ shop.numero }}</span>
     <div>
       <span class="" itemprop="postalCode">{{ shop.cp }}</span>
@@ -19,18 +20,15 @@ const {shop} = defineProps<{
     </div>
   </a>
 
-  <p itemprop="addressCountry">
-    <a id="linkToMap" href="#map" title="Accéder à la map" class="scrollTo">
-      <i class="fa fa-eye" aria-hidden="true"></i>
-    </a>
-  </p>
-
-  <div v-if="shop.pmr" class="">
-    Pmr <i class="fa fa-wheelchair"></i>
-  </div>
-
-  <a href="#map" id="goToMap" title="Accéder à la map" class="scrollTo">
+  <a id="linkToMap" href="#map" title="Accéder à la map" class="flex flex-row gap-2">
+    <IconMap class="h-8 w-8 flex-shrink-0 text-white " aria-hidden="true"/>
     Voir sur la carte
   </a>
+
+  <div v-if="!shop.pmr" class="flex flex-row gap-2" title="Accès aux personnes à mobilité réduite">
+    <IconWheelchair class="h-8 w-8 flex-shrink-0 text-white " aria-hidden="true"/>
+    Pmr
+  </div>
+
 
 </template>
