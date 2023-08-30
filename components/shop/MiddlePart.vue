@@ -13,7 +13,7 @@ function formatTextWithLineBreaks(text: string | null) {
 }
 </script>
 <template>
-  <section class="grid grid-cols-[1fr_auto] items-start justify-start mb-12" id="middlePart">
+  <section class="grid grid-cols-[1fr_auto] items-start justify-start" id="middle-part">
     <div class="my-5">
       <h2 class="text-3xl my-3">{{ shop.cap.commercialWordTitle }}</h2>
       <p v-html="formatTextWithLineBreaks(shop.cap.commercialWordDescription)"></p>
@@ -51,7 +51,7 @@ function formatTextWithLineBreaks(text: string | null) {
   </section>
 </template>
 <style>
-#middlePart {
+#middle-part {
   padding: 48px 51px;
   background-image: url('/images/middleCrystal.png');
   background-position: right bottom;

@@ -20,7 +20,7 @@ const init = () => {
 };
 </script>
 <template>
-  <section class="h-96 w-full">
+  <section class="h-96 w-full" id="map">
     <l-map ref="map" v-model:zoom="zoom" :center="coordinates" :use-global-leaflet="false" @ready="init">
       <l-tile-layer
           ref="tileLayer"
