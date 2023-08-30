@@ -55,6 +55,7 @@ const shopImage = computed(() => {
     </div>
     <ShopMiddlePart :shop="shop"/>
     <ShopBannerCheck/>
+    <ShopMap :shop="shop"/>
     <ShopMemberCap/>
     <ShopGallerie :shop="shop"/>
   </article>
