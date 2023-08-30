@@ -21,9 +21,7 @@
     </p>
     <p class="">
       Notre objectif est de rassembler un maximum de commerces adhérents afin de pérenniser l’association et permettre à
-      nos
-      projets futurs de voir le jour.
-      Découvrez l'équipe !
+      nos projets futurs de voir le jour.
     </p>
   </div>
 
