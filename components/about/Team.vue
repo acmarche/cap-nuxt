@@ -13,7 +13,7 @@ const team = [
 ]
 </script>
 <template>
-  <section class="mx-auto max-w-7xl px-6 text-center lg:px-8">
+  <div class="mx-auto max-w-7xl px-6 text-center lg:px-8">
     <div class="mx-auto max-w-2xl">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         Rencontrez notre équipe
@@ -29,11 +29,11 @@ const team = [
         <img class="mx-auto h-56 w-56 rounded-full"
              :src="`/images/${member.image}`"
              alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
+        <h3 class="mt-6 text-base font-pathway-semi-bold leading-7 tracking-tight text-blue-default">
           {{ member.name }}
         </h3>
         <p class="text-sm leading-6 text-gray-600">{{ member.function }}</p>
       </li>
     </ul>
-  </section>
+  </div>
 </template>

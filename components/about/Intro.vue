@@ -1,7 +1,6 @@
 <template>
-
-  <div class="flex flex-col items-center justify-center space-y-4 prose lg:prose-xl mx-auto my-4">
-    <h1 class="text-2xl text-grey-shop font-pathway-semi-bold">A propos de « Cap sur Marche »</h1>
+  <div class="flex flex-col items-center justify-center space-y-4 prose lg:prose-xl mx-auto my-8">
+    <h1 class="text-grey-shop font-pathway-semi-bold">A propos de « Cap sur Marche »</h1>
 
     <p class="">
       Fondée en 2013, CAP sur Marche, c’est l’association marchoise des Commerçants, Artisans et Professions libérales.
@@ -24,5 +23,4 @@
       nos projets futurs de voir le jour.
     </p>
   </div>
-
 </template>

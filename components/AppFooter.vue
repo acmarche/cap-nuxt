@@ -22,9 +22,7 @@ const events = [
 </script>
 
 <template>
-  <footer
-      class="w-full min-h-[20rem] text-white xl:pb-5 "
-  >
+  <footer class="w-full min-h-[20rem] text-white xl:pb-5 ">
     <div class="bg-grey-dark p-5 pb-20 flex flex-col justify-between xl:grid xl:grid-cols-4">
       <div>
         <h3 class="text-2xl mb-2">Liens</h3>
