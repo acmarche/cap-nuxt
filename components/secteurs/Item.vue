@@ -7,7 +7,7 @@ const smallDescription = computed(function () {
 })
 </script>
 <template>
-  <NuxtLink :to="`/secteurs/${category.slugname}`"
+  <NuxtLink :to="`/secteurs/${category.id}`"
             class="flex flex-col items-center justify-center p-3 group hover:-translate-y-3 transition-all duration-500">
     <img :src="category.logo" :alt="category.slugname" height="103" width="127" class="">
     <h3 class="uppercase text-lg font-pathway-semi-bold group-hover:text-blue-default mb-2">{{ category.name }}</h3>
