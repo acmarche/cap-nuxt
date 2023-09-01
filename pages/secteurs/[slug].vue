@@ -1,13 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'noheaderlayout',
+  layout: 'default',
 })
+
 const {path, params} = useRoute()
+
 const {
   data,
   error,
   pending
-} = await useFetch(() => `http://api.local/bottin/category/${params.id}`, {
+} = await useFetch(() => `http://api.local/bottin/category-by-slug/${params.slug}`, {
   onRequest({request, options}) {
   },
   onRequestError({request, options, error}) {
@@ -22,9 +24,9 @@ const {
 });
 </script>
 <template>
-  <section class="flex flex-row" v-if="data">
+  <section class="flex flex-row pb-4 bg-grey-lighter" v-if="data">
     <SecteursSideChild :category="data"/>
-    <SecteursListChild :categories="data.enfants"/>
+    <SecteursListChild :category="data"/>
   </section>
 </template>
 <style>

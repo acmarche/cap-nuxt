@@ -18,7 +18,7 @@ const {
     console.log(error)
   },
   onResponse({request, response, options}) {
-    console.log(123)
+
   },
   onResponseError({request, response, options}) {
     console.log(response)

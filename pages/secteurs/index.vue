@@ -1,6 +1,7 @@
 <script setup>
 definePageMeta({
   layout: 'default',
+  title: 'My home page'
 })
 const {
   data,

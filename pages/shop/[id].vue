@@ -10,10 +10,7 @@ const {
 } = shopGet(params.id);
 
 const shopImage = computed(() => {
-  //console.log(shop.cap.profileMediaPath)
   if (shop.cap) {
-    console.log(123)
-    console.log(shop.cap.profileMediaPath)
     if (shop.cap.profileMediaPath) {
       return `https://cap.marche.be/${shop.cap.profileMediaPath}`
     }
