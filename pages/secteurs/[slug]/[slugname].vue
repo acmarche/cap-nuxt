@@ -5,7 +5,7 @@ definePageMeta({
 
 const route = useRoute();
 const {slug, slugname} = route.params;
-
+console.log(route)
 const {
   data,
   error,
