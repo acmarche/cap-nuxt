@@ -4,7 +4,7 @@ const {category} = defineProps<{
 }>()
 </script>
 <template>
-  <aside class="flex flex-col gap-4 bg-blue-lighter text-white px-20 py-4" v-if="category">
+  <aside class="flex flex-col gap-4 bg-blue-lighter text-white px-20 h-full py-12 max-w-lg mr-3 pb-24" v-if="category">
     <img :src="category.logo_blanc" :alt="category.slugname" height="103" width="127" class="">
     <h1 class="text-3xl font-pathway-medium mb-3">{{ category.name }}</h1>
     <p>
