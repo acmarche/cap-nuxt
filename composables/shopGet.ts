@@ -1,6 +1,6 @@
-export default (shopId: Number) => {
+export default (slug: String) => {
     const {pending: pendingShop, data: shop, error: errorShop} = useLazyFetch(
-        `http://api.local/bottin/fiche/${shopId}`
+        `http://api.local/bottin/fichebyslugname/${slug}`
     );
     return {
         pendingShop,

@@ -7,7 +7,7 @@ const {
   pendingShop,
   shop,
   errorShop
-} = shopGet(params.id);
+} = shopGet(params.slugname);
 
 const shopImage = computed(() => {
   if (shop.cap) {

@@ -70,7 +70,8 @@ module.exports = {
                     light: '#F8F8F8',
                     lighter: '#ededec',
                     white: '#fefefc',
-                    tt: '#f5fafce8'
+                    tt: '#f5fafce8',
+                    xx: '#f3f4f1ff'
                 },
             }
         },

@@ -42,7 +42,7 @@ function hasCommercialWordTitle() {
 </script>
 <template>
   <article class="group">
-    <NuxtLink :to="`/shop/${fiche.id}`">
+    <NuxtLink :to="{name:'commerces-et-entreprises-slug-slugname',params:{slug:'boulangerie',slugname: fiche.slug}}">
       <div class="grid [grid-template-areas:block] justify-center items-center h-64">
         <div
             class="[grid-area:block] h-64 w-96 bg-center bg-no-repeat bg-cover"
