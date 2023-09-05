@@ -9,9 +9,9 @@ const mobileMenu = ref(false)
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
       </svg>
     </a>
-    <a href="/" class="mr-auto lg:self-center">
+    <NuxtLink to="/" class="mr-auto lg:self-center">
       <img src="/images/wholeLogo.png" alt="logo"/>
-    </a>
+    </NuxtLink>
     <HeaderTopNavigation :mobileMenu="mobileMenu"/>
   </header>
 </template>

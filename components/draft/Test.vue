@@ -8,5 +8,8 @@ const emit = defineEmits<{
     change: [id: number]
     update: [value: string]
 }>()
-const modelValue = defineModel<string>()
+const modelValue = defineModel<number>('modelValue', {
+  required: false,
+  default: 0
+})
 </script>

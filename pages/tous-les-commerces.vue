@@ -1,35 +1,18 @@
-<script setup>
+<script setup lang="ts">
+import fichesGetByCategory from "~/composables/fichesGetByCategory";
+
 definePageMeta({
   layout: 'default',
   title: 'test',
 })
-
 const categorySelected = ref(0)
 const childSelected = ref(0)
 
-const {
-  data,
-  error,
-  pending
-} = await useFetch(() => `http://api.local/bottin/fiches/cap/rubrique/${childSelected.value}`, {
-  onRequest({request, options}) {
-  },
-  onRequestError({request, options, error}) {
-    console.log(error)
-  },
-  onResponse({request, response, options}) {
-
-  },
-  onResponseError({request, response, options}) {
-    console.log(response)
-  },
-});
+const {data, error, pending} = await fichesGetByCategory(childSelected.value)
 
 </script>
 <template>
   <section class="w-full">
-    <p>categorySelected: {{ categorySelected }}</p>
-    <p>childSelected: {{ childSelected }}</p>
     <div class="bg-shops-form text-white bg-blue-search p-28">
       <h1 class="text-4xl mb-8 font-pathway-semi-bold">NOS COMMERCES</h1>
       <ShopsFormSearchShops v-model:categorySelected="categorySelected" v-model:childSelected="childSelected"/>
