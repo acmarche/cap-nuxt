@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {itemsShort} from "~/composables/menuItemsGet";
+
 const {shop} = defineProps<{
   shop: { type: Object, required: true },
 }>()
@@ -9,21 +11,19 @@ const {shop} = defineProps<{
       <img class="" src="https://cap.marche.be/templates/commercio/resources/capMarcheLogo.png" width="58" height="82"
            alt="Logo Cap sur Marche">
     </NuxtLink>
-    <div class="flex flex-col pl-2">
+    <div class="flex flex-col pl-2 gap-2">
       <h1 class="text-3xl font-pathway-semi-bold">
         {{ shop.societe }}
       </h1>
-      <ShopBreadcumb :path="shop.classements[0].path" text-color="text-green-default"
+      <ShopBreadcumb :path="shop.classements[0].path" text-color="text-grey-dark"
                      text-color-hover="hover:text-blue-default"/>
     </div>
     <div class="ml-auto flex flex-row items-center font-pathway-semi-bold text-lg space-x-4">
-      <NuxtLink to="/tous-les-commerces" title="À propos de nous" class=" h-12">
-        Commerces
+      <NuxtLink v-for="item in itemsShort" :to="item.url" :key="item.id" title=""
+                class="font-pathway-regular text-grey-dark  h-12">
+        {{ item.name }}
       </NuxtLink>
-      <NuxtLink to="/secteurs" title="Trouvez-nous sur la carte !" class=" h-12">
-        Secteurs
-      </NuxtLink>
-      <form class="relative mb-3 h-12 w-80">
+      <form class="relative mb-3 h-12 w-[22rem]">
         <input type="search"
                class="placeholder-text-grey-light absolute inset-0 rounded-2xl border border-slate-300 bg-white pl-12 pr-12 focus:border-white focus:outline-none focus:ring focus:ring-blue-400"
                placeholder="Rechercher un commerçant"/>
