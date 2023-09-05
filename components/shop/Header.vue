@@ -1,28 +1,28 @@
 <script setup lang="ts">
-
 const {shop} = defineProps<{
   shop: { type: Object, required: true },
 }>()
 </script>
 <template>
   <header class="flex flex-row items-center" shop="null">
-    <a href="https://cap.marche.be//accueil" title="Cap sur Marche - retour à l'accueil">
+    <NuxtLink to="/" title="Cap sur Marche - retour à l'accueil">
       <img class="" src="https://cap.marche.be/templates/commercio/resources/capMarcheLogo.png" width="58" height="82"
            alt="Logo Cap sur Marche">
-    </a>
+    </NuxtLink>
     <div class="flex flex-col pl-2">
       <h1 class="text-3xl font-pathway-semi-bold">
         {{ shop.societe }}
       </h1>
-      <ShopBreadcumb :shop="shop"/>
+      <ShopBreadcumb :path="shop.classements[0].path" text-color="text-green-default"
+                     text-color-hover="hover:text-blue-default"/>
     </div>
     <div class="ml-auto flex flex-row items-center font-pathway-semi-bold text-lg space-x-4">
-      <a href="/tous-les-commerces" title="À propos de nous" class=" h-12">
+      <NuxtLink to="/tous-les-commerces" title="À propos de nous" class=" h-12">
         Commerces
-      </a>
-      <a href="/secteurs" title="Trouvez-nous sur la carte !" class=" h-12">
+      </NuxtLink>
+      <NuxtLink to="/secteurs" title="Trouvez-nous sur la carte !" class=" h-12">
         Secteurs
-      </a>
+      </NuxtLink>
       <form class="relative mb-3 h-12 w-80">
         <input type="search"
                class="placeholder-text-grey-light absolute inset-0 rounded-2xl border border-slate-300 bg-white pl-12 pr-12 focus:border-white focus:outline-none focus:ring focus:ring-blue-400"
@@ -36,10 +36,10 @@ const {shop} = defineProps<{
           </svg>
         </div>
       </form>
-      <a href="/" title="Retour à la page d'accueil">
+      <NuxtLink to="/" title="Retour à la page d'accueil">
         <img src="https://cap.marche.be/templates/commercio/resources/rightCorner2.png" width="164" height="148"
              alt="Côté droite"/>
-      </a>
+      </NuxtLink>
     </div>
   </header>
 </template>

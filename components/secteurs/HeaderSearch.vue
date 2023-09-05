@@ -4,39 +4,20 @@ import {IconChevronRight} from '@tabler/icons-vue';
 const {category} = defineProps<{
   category: { type: Object, required: true },
 }>()
-console.log(category)
+
+const pathComputed = computed(() => category.path.map((element) => {
+  if (element.id === 511 || element.id === 610) { //remove economie, commerces et entreprises
+    return null;
+  }
+  return element;
+}).filter((element) => element !== null));
+
 </script>
 <template>
   <header class="bg-search-header bg-blue-search p-12">
     <h1 itemprop="headline" class="text-3xl text-white font-pathway-semi-bold uppercase mb-3">
       {{ category.name }} à Marche-en-Famenne</h1>
-
-    <nav class="flex" aria-label="Breadcrumb">
-      <ol role="list" class="flex items-center space-x-2">
-        <li>
-          <div>
-            <a href="/secteurs" class="text-white hover:text-green-default">
-              <span class="uppercase">Commerces et entreprises</span>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="flex items-center">
-            <IconChevronRight class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
-            <a href="/secteur/services"
-               class="text-sm font-medium text-white hover:text-green-default uppercase">Services</a>
-          </div>
-        </li>
-        <li>
-          <div class="flex items-center">
-            <IconChevronRight class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
-            <a href="/secteur/services/agences-immobilieres"
-               class="text-sm font-medium text-white hover:text-green-default uppercase" aria-current="page">
-              Agences immobilières</a>
-          </div>
-        </li>
-      </ol>
-    </nav>
+    <ShopBreadcumb :path="category.path" text-color="text-white" text-color-hover="hover:text-green-default"/>
     <p class="text-white m-3 prose lg:prose-xl">
       {{ category.description }}
     </p>

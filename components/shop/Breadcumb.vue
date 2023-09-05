@@ -1,32 +1,41 @@
 <script setup lang="ts">
 import {IconChevronRight} from '@tabler/icons-vue';
-const {shop} = defineProps<{
-  shop: { type: Object, required: true },
+
+const {path, textColor, textColorHover} = defineProps<{
+  path: { type: Array<Object>, required: true, default: [] },
+  textColor: { type: String, required: true, default: 'text-white' },
+  textColorHover: { type: String, required: true, default: 'hover:text-green-default' },
 }>()
+
+const pathComputed = computed(() => path.map((element) => {
+  if (element.id === 511 || element.id === 610) { //remove economie, commerces et entreprises
+    return null;
+  }
+  return element;
+}).filter((element) => element !== null));
+
 </script>
 <template>
   <nav class="flex" aria-label="Breadcrumb">
     <ol role="list" class="flex items-center space-x-2">
       <li>
         <div>
-          <a href="/secteurs" class="text-grey-shop hover:text-gray-500">
-            <span class="uppercase">Commerces et entreprises</span>
-          </a>
+          <NuxtLink to="/secteurs">
+            <span class="uppercase"
+                  :class="`${textColor} ${textColorHover}`">
+              Commerces et entreprises
+            </span>
+          </NuxtLink>
         </div>
       </li>
-      <li>
+      <li v-for="path in pathComputed">
         <div class="flex items-center">
           <IconChevronRight class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
-          <a href="/secteur/services"
-             class="text-sm font-medium text-grey-shop hover:text-gray-700 uppercase">Services</a>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center">
-          <IconChevronRight class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
-          <a href="/secteur/services/agences-immobilieres"
-             class="text-sm font-medium text-grey-shop hover:text-gray-700 uppercase" aria-current="page">
-            Agences immobilières</a>
+          <NuxtLink :href="`/secteurs/${path.slugname}`"
+                    class="text-sm font-medium uppercase"
+                    :class="`${textColor} ${textColorHover}`"
+                    aria-current="page">{{ path.name }}
+          </NuxtLink>
         </div>
       </li>
     </ol>
