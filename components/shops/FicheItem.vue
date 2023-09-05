@@ -36,20 +36,30 @@ const commercialWordTitle = computed(() => {
   if (propos.fiche.cap != null && propos.fiche.cap.commercialWordTitle?.length > 0) {
     return propos.fiche.cap.commercialWordTitle
   }
-  return propos.fiche.classements[0].path[3].name
+  return 'Beautiful Turkey'
+})
+
+const mainActivity = computed(() => {
+  return propos.fiche.classements[0].path[2].name
 })
 
 </script>
 <template>
-  <article class="group w-96">
+  <article class="group md:max-w-3xl">
     <NuxtLink
         :to="{name:'commerces-et-entreprises-slug-slugname',params:{slug:'boulangerie',slugname: fiche.slug}}"
-        class="flex flex-col  overflow-hidden">
-      <img :src="shopImage" alt="" class="h-80">
-      <div class="flex flex-col gap-3 bg-white w-96">
+        class="flex flex-col overflow-hidden">
+      <div class="relative flex h-80">
+        <img :src="shopImage" alt="" class="w-full h-full object-cover">
+        <p class="absolute top-0 left-0 bottom-0 self-end right-0 rounded-b-lg bg-black/50 p-2 text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          {{ commercialWordTitle }}
+        </p>
+      </div>
+      <div
+          class="h-36 flex flex-col gap-3 bg-white pl-3 border border-transparent group-hover:border-blue-default group-hover:bg-grey-tt transition-all duration-300 ease-in-out">
         <h3 class="text-2xl text-grey-shop uppercase font-pathway-semi-bold">{{ propos.fiche.societe }}</h3>
         <h4 class="text-lg text-grey-shop font-pathway-semi-bold">
-          {{ commercialWordTitle }}
+          {{ mainActivity }}
         </h4>
         <p>{{ propos.fiche.localite }}</p>
       </div>
