@@ -1,6 +1,5 @@
 <script setup>
 import categoriesGet from "~/composables/categoriesGet";
-import categoriesByParentGet from "~/composables/categoriesByParentGet";
 
 const propos = defineProps({
   categorySelected: Number,
@@ -9,41 +8,24 @@ const propos = defineProps({
 
 const catSelected = ref(propos.categorySelected)
 const childSelected = ref(propos.childSelected)
-const emits = defineEmits(['update:categorySelected', 'update:childSelected'])
-const children = ref([])
+const emits = defineEmits(['update:category-selected', 'update:child-selected'])
 
-const {
-  pending: pendingCategories,
-  categories,
-  error: errorCategories
-} = categoriesGet()
+const {categories} = categoriesGet()
 
 function upd() {
-  emits('update:categorySelected', catSelected.value)
-  emits('update:childSelected', childSelected.value)
+  emits('update:category-selected', catSelected.value)
 }
 
-watch(catSelected, (newCategoryId) => {
-  if (newCategoryId !== null) {
-    console.log(newCategoryId)
-    const {
-      pending: pendingChildren,
-      data,
-      error: errorChildren
-    } = categoriesByParentGet(newCategoryId)
-    children.value = data.value
-  }
-});
+function upd2() {
+  emits('update:child-selected', childSelected.value)
+}
+
+const url = computed(() => `http://api.local/bottin/categories/byparent/${catSelected.value}`)
+const {data: children} = useFetch(url)
+
 </script>
 <template>
   <form name="search" class="">
-    <template v-if="pendingCategories">
-      Loading Events...
-    </template>
-    <template v-if="errorCategories" class="text-red-600">
-      Error {{ errorCategories }}
-    </template>
-
     <div class="flex flex-row gap-2">
       <div class="flex flex-col basis-1/2	">
         <h2 class="text-xl uppercase font-pathway-semi-bold mb-2">TRIER PAR CATÉGORIE</h2>
@@ -57,7 +39,7 @@ watch(catSelected, (newCategoryId) => {
 
       <div class="flex flex-col basis-1/2	">
         <h2 class="text-xl uppercase font-pathway-semi-bold mb-2">TRIER PAR SOUS-CATÉGORIE</h2>
-        <select name="child" class="text-grey-e" v-model="childSelected" @change="upd">
+        <select name="child" class="text-grey-e" v-model="childSelected" @change="upd2">
           <option value="0">Choisir une catégorie</option>
           <option v-if="children" v-for="child in children" :value="child.id">
             {{ child.name }}
