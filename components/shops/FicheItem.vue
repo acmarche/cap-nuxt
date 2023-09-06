@@ -40,6 +40,9 @@ const commercialWordTitle = computed(() => {
 })
 
 const mainActivity = computed(() => {
+  if (propos.fiche.classements[0].path[3] != null) {
+    return propos.fiche.classements[0].path[3].name
+  }
   return propos.fiche.classements[0].path[2].name
 })
 
@@ -51,7 +54,7 @@ const mainActivity = computed(() => {
         class="flex flex-col overflow-hidden">
       <div class="relative flex h-80">
         <img :src="shopImage" alt="" class="w-full h-full object-cover">
-        <p class="absolute top-0 left-0 bottom-0 self-end right-0 rounded-b-lg bg-black/50 p-2 text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <p class="absolute  h-12 left-0 bottom-0 right-0 rounded-b-lg bg-black/50 p-2 text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           {{ commercialWordTitle }}
         </p>
       </div>
