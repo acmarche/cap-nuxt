@@ -1,5 +1,6 @@
 <script setup>
 import categoriesGet from "~/composables/categoriesGet";
+import categoriesByParentGet from "~/composables/categoriesByParentGet";
 
 const propos = defineProps({
   categorySelected: Number,
@@ -8,23 +9,31 @@ const propos = defineProps({
 
 const catSelected = ref(propos.categorySelected)
 const childSelected = ref(propos.childSelected)
-
 const emits = defineEmits(['update:categorySelected', 'update:childSelected'])
+const children = ref([])
+
+const {
+  pending: pendingCategories,
+  categories,
+  error: errorCategories
+} = categoriesGet()
 
 function upd() {
   emits('update:categorySelected', catSelected.value)
   emits('update:childSelected', childSelected.value)
 }
 
-const {
-  pendingCategories,
-  categories,
-  errorCategories
-} = categoriesGet()
-
-const url = computed(() => `http://api.local/bottin/categories/byparent/${catSelected.value}`)
-const {data: childs} = useFetch(url)
-
+watch(catSelected, (newCategoryId) => {
+  if (newCategoryId !== null) {
+    console.log(newCategoryId)
+    const {
+      pending: pendingChildren,
+      data,
+      error: errorChildren
+    } = categoriesByParentGet(newCategoryId)
+    children.value = data.value
+  }
+});
 </script>
 <template>
   <form name="search" class="">
@@ -50,7 +59,7 @@ const {data: childs} = useFetch(url)
         <h2 class="text-xl uppercase font-pathway-semi-bold mb-2">TRIER PAR SOUS-CATÉGORIE</h2>
         <select name="child" class="text-grey-e" v-model="childSelected" @change="upd">
           <option value="0">Choisir une catégorie</option>
-          <option v-if="childs" v-for="child in childs" :value="child.id">
+          <option v-if="children" v-for="child in children" :value="child.id">
             {{ child.name }}
           </option>
         </select>

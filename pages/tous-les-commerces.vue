@@ -8,12 +8,12 @@ definePageMeta({
 const categorySelected = ref(0)
 const childSelected = ref(0)
 
-const {data, error, pending} = await fichesGetByCategory(childSelected.value)
+const {data, error, pending} = fichesGetByCategory(childSelected.value)
 
 </script>
 <template>
   <section class="w-full">
-    <div class="bg-shops-form text-white bg-blue-search p-28">
+    <div class="bg-shops-form text-white bg-blue-search p-20">
       <h1 class="text-4xl mb-8 font-pathway-semi-bold">NOS COMMERCES</h1>
       <ShopsFormSearchShops v-model:categorySelected="categorySelected" v-model:childSelected="childSelected"/>
     </div>
