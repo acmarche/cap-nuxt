@@ -10,7 +10,7 @@ const catSelected = ref(propos.categorySelected)
 const childSelected = ref(propos.childSelected)
 const emits = defineEmits(['update:category-selected', 'update:child-selected'])
 
-const {categories} = categoriesGet()
+const {data: categories} = categoriesGet()
 
 function upd() {
   emits('update:category-selected', catSelected.value)

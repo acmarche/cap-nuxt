@@ -1,14 +1,14 @@
 export default () => {
     const {
-        pending: pendingCategories,
-        data: categories,
-        error: errorCategories
-    } = useLazyFetch(
+        pending,
+        data,
+        error
+    } = useFetch(
         `http://api.local/bottin/commerces`
     );
     return {
-        pendingCategories,
-        categories,
-        errorCategories
+        pending,
+        data,
+        error
     };
 }
