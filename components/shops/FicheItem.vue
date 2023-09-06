@@ -54,7 +54,11 @@ const mainActivity = computed(() => {
         class="flex flex-col overflow-hidden">
       <div class="relative flex h-80">
         <img :src="shopImage" alt="" class="w-full h-full object-cover">
-        <p class="absolute  h-12 left-0 bottom-0 right-0 rounded-b-lg bg-black/50 p-2 text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          <div
+            class="absolute left-0 bottom-0 right-0 group w-full h-full opacity-0 bg-center bg-no-repeat bg-cover group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+            :style="`background-image:url(${shopImageOver})`">
+        </div>
+        <p class="absolute h-12 left-0 bottom-0 right-0 rounded-b-lg bg-black/50 p-2 text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           {{ commercialWordTitle }}
         </p>
       </div>
