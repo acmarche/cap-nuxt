@@ -2,7 +2,7 @@
 const {shop} = defineProps<{
   shop: { type: Object, required: true },
 }>()
-const isH = computed(() => shop.cap.hoursTypeName && shop.cap.hoursTypeId)
+const isH = computed(() => shop.cap?.hoursTypeName && shop.cap?.hoursTypeId)
 const hasHours = computed(() => shop.horaires && shop.horaires.type === Array && shop.horaires.length > 0)
 
 //select * from commercio_commercant_hours where commercio_commercant_id = 69
@@ -15,7 +15,7 @@ function displayClosedAtLunch(day: object): boolean {
 
 const titleHours = computed(function () {
   if (isH.value === false) return ''
-  if (shop.cap.hoursType) {
+  if (shop.cap?.hoursType) {
     switch (shop.cap.hoursType.id) {
       case 2 :
         return 'Heures d\'ouverture'
@@ -46,11 +46,11 @@ const daysName = [
     <span class="uppercase">{{ titleHours }}</span>
   </h2>
 
-  <div v-if="shop.cap.hours.length > 0" itemprop="openingHoursSpecification"
+  <div v-if="shop.cap?.hours.length > 0" itemprop="openingHoursSpecification"
        itemtype="http://schema.org/OpeningHoursSpecification" itemscope>
 
     <ul class="">
-      <li v-for="day in shop.cap.hours" :key="day.id" class="flex justify-between w-full p-2">
+      <li v-for="day in shop.cap?.hours" :key="day.id" class="flex justify-between w-full p-2">
         <div class="font-extrabold">
           {{ daysName[day.day] }}
         </div>
