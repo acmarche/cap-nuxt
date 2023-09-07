@@ -73,7 +73,24 @@ module.exports = {
                     tt: '#f5fafce8',
                     xx: '#f3f4f1ff'
                 },
-            }
+            },
+            keyframes: {
+                shimmer: {
+                    '0%': {
+                        backgroundPosition: 'left',
+                    },
+                    '50%': {
+                        backgroundPosition: 'right',
+                    },
+                    '100%': {
+                        backgroundPosition: 'left',
+                    },
+                },
+            },
+            animation: {
+                shimmer: '6s infinite shimmer ease-in-out',
+                pulse: 'pulse 900ms ease-in-out infinite',
+            },
         },
         objectPosition: {
             'top-center': 'top center',
