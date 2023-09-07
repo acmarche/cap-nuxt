@@ -15,13 +15,15 @@ function displayClosedAtLunch(day: object): boolean {
 
 const titleHours = computed(function () {
   if (isH.value === false) return ''
-  switch (shop.cap.hoursType.id) {
-    case 2 :
-      return 'Heures d\'ouverture'
-    case 1 :
-      return 'Heures de consultations'
-    default :
-      return 'Heures d\'ouverture'
+  if (shop.cap.hoursType) {
+    switch (shop.cap.hoursType.id) {
+      case 2 :
+        return 'Heures d\'ouverture'
+      case 1 :
+        return 'Heures de consultations'
+      default :
+        return 'Heures d\'ouverture'
+    }
   }
 })
 
