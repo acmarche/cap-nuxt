@@ -48,7 +48,7 @@ const mainActivity = computed(() => {
 
 </script>
 <template>
-  <article class="group md:max-w-2xl">
+  <article class="group md:max-w-xl">
     <NuxtLink
         :to="{name:'commerces-et-entreprises-slug-slugname',params:{slug:'boulangerie',slugname: fiche.slug}}"
         class="flex flex-col overflow-hidden">

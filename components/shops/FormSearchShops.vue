@@ -3,12 +3,16 @@ import categoriesGet from "~/composables/categoriesGet";
 
 const propos = defineProps({
   categorySelected: Number,
-  childSelected: Number
+  childSelected: Number,
+  openSunday: Boolean,
+  openNoon: Boolean,
 })
 
 const catSelected = ref(propos.categorySelected)
 const childSelected = ref(propos.childSelected)
-const emits = defineEmits(['update:category-selected', 'update:child-selected'])
+const openSunday = ref(propos.openSunday)
+const openNoon = ref(propos.openNoon)
+const emits = defineEmits(['update:category-selected', 'update:child-selected', 'update:open-sunday', 'update:open-noon'])
 
 const {data: categories} = categoriesGet()
 
@@ -22,6 +26,14 @@ function upd2() {
 
 const url = computed(() => `http://api.local/bottin/categories/byparent/${catSelected.value}`)
 const {data: children} = useFetch(url)
+
+watch(openSunday, (newValue) => {
+   emits('update:open-sunday', newValue)
+})
+
+watch(openNoon, (newValue) => {
+   emits('update:open-noon', newValue)
+})
 
 </script>
 <template>
@@ -52,11 +64,11 @@ const {data: children} = useFetch(url)
     <div class="flex flex-row mt-6">
         <span class="text-lg uppercase mr-3">
         OUVERT LE DIMANCHE
-        <input type="checkbox" name="open_sunday">
+        <input type="checkbox" name="open_sunday" v-model="openSunday">
         </span>
       <span class="text-lg uppercase">
         OUVERT SUR LE TEMPS DE MIDI
-          <input type="checkbox" name="open_noon">
+          <input type="checkbox" name="open_noon" v-model="openNoon">
         </span>
     </div>
 
