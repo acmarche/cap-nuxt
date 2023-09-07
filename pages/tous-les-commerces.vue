@@ -29,7 +29,7 @@ const {
     <ShopsLegendIcones/>
     <span v-if="pending">Loading...</span>
     <div v-else-if="data">
-
+      <ShopsListResult :fiches="data"/>
     </div>
     <span v-else-if="error">Error: {{ error }}</span>
   </section>
