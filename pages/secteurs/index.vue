@@ -7,19 +7,7 @@ const {
   data,
   error,
   pending
-} = await useFetch(() => `http://api.local/bottin/commerces`, {
-  onRequest({request, options}) {
-  },
-  onRequestError({request, options, error}) {
-    console.log(error)
-  },
-  onResponse({request, response, options}) {
-
-  },
-  onResponseError({request, response, options}) {
-    console.log(response)
-  },
-});
+} = await useFetch(() => `http://api.local/bottin/commerces`);
 </script>
 <template>
   <section class="flex flex-row">
@@ -31,5 +19,3 @@ const {
     </template>
   </section>
 </template>
-<style>
-</style>
