@@ -15,8 +15,8 @@ function formatTextWithLineBreaks(text: string | null) {
 <template>
   <section class="grid grid-cols-[1fr_auto] items-start justify-start" id="middle-part">
     <div class="my-5">
-      <h2 class="text-3xl my-3">{{ shop.cap.commercialWordTitle }}</h2>
-      <p v-html="formatTextWithLineBreaks(shop.cap.commercialWordDescription)"></p>
+      <h2 class="text-3xl my-3">{{ shop.cap?.commercialWordTitle }}</h2>
+      <p v-html="formatTextWithLineBreaks(shop.cap?.commercialWordDescription)"></p>
 
       <div class="flex flex-row space-x-4 text-white m-3">
         <a class="block bg-green-btn uppercase py-3 px-5" :href="shop.website" title="Voir notre site" target="_blank">
@@ -44,7 +44,7 @@ function formatTextWithLineBreaks(text: string | null) {
       </div>
     </div>
     <div class="grid grid-cols-2 gap-3 m-3">
-      <img v-for="image in shop.cap.images" :key="image.id" :alt="image.name"
+      <img v-for="image in shop.cap?.images" :key="image.id" :alt="image.name"
            :src="`https://cap.marche.be/${image.path}`"
            width="174">
     </div>
