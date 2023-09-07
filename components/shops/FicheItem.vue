@@ -53,7 +53,7 @@ const mainActivity = computed(() => {
         :to="{name:'commerces-et-entreprises-slug-slugname',params:{slug:'boulangerie',slugname: fiche.slug}}"
         class="flex flex-col overflow-hidden">
       <div class="relative flex h-80">
-        <img :src="shopImage" alt="" class="w-full h-full object-cover">
+        <img :src="shopImage" alt="" class="w-full h-full object-cover aspect-square">
           <div
             class="absolute left-0 bottom-0 right-0 group w-full h-full opacity-0 bg-center bg-no-repeat bg-cover group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
             :style="`background-image:url(${shopImageOver})`">
