@@ -16,10 +16,10 @@ function prettyPhone(phone: string) {
       <span class="uppercase">Contactez-nous</span>
     </h2>
 
-    <p v-if="shop.cap.legalPhone" class="flex flex-row justify-between p-2">
+    <p v-if="shop.cap?.legalPhone" class="flex flex-row justify-between p-2">
       <span>Par téléphone :</span>
       <span class="">
-        {{ prettyPhone(shop.cap.legalPhone) }}
+        {{ prettyPhone(shop.cap?.legalPhone) }}
       </span>
     </p>
 
@@ -37,8 +37,8 @@ function prettyPhone(phone: string) {
       </span>
     </p>
 
-    <p v-if="shop.cap.vatNumber" class="flex flex-row justify-between p-2">
-      <span>Numéro de TVA :</span> <span class="">{{ shop.cap.vatNumber }}</span>
+    <p v-if="shop.cap?.vatNumber" class="flex flex-row justify-between p-2">
+      <span>Numéro de TVA :</span> <span class="">{{ shop.cap?.vatNumber }}</span>
     </p>
 
     <p v-if="shop.email" class="flex flex-row justify-between p-2">
@@ -55,19 +55,19 @@ function prettyPhone(phone: string) {
       </a>
 
       <div class="flex flex-row">
-        <a v-if="shop.cap.facebookLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.facebookLink"
+        <a v-if="shop.cap?.facebookLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.facebookLink"
            target="_blank"
            title="Rejoignez-nous sur Facebook">
           <img src="/images/socialLink1.png" width="37" height="38" alt="Icone social"/>
         </a>
 
-        <a v-if="shop.cap.twitterLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.twitterLink"
+        <a v-if="shop.cap?.twitterLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.twitterLink"
            target="_blank"
            title="Rejoignez-nous sur Twitter">
           <img src="/images/socialLink2.png" width="37" height="38" alt="Icone social"/>
         </a>
 
-        <a v-if="shop.cap.linkedinLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.linkedinLink"
+        <a v-if="shop.cap?.linkedinLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.linkedinLink"
            target="_blank"
            title="Rejoignez-nous sur Linkedin">
           <img src="/images/socialLink3.png" width="37" height="38" alt="Icone social"/>
