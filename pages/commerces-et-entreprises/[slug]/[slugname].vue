@@ -26,7 +26,7 @@ const shopImage = computed(() => {
 </script>
 <template>
   <template v-if="pendingShop">
-    Loading Shop...
+    <WidgetsLoader/>
   </template>
   <template v-if="errorShop" class="text-red-600">
     Error {{ errorShop }}
