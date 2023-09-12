@@ -2,7 +2,6 @@
 definePageMeta({
   layout: 'default',
 })
-
 const route = useRoute();
 const {slug, slugname} = route.params
 const config = useRuntimeConfig()
@@ -17,13 +16,16 @@ const {
   error: error2,
   pending: pending2
 } = await useFetch(() => `${config.public.API_URL}/category-by-slug/${slugname}`)
+useHead({
+  title: `${data.name} - ${currentCategory.name}`,
+})
 </script>
 <template>
-  <span v-if="pending && pending2">Loading...</span>
-  <div v-else-if="data && currentCategory" class="flex flex-col gap-2 bg-blue-search bg-grey-xx">
+  <WidgetsLoader v-if="pending"/>
+  <WidgetsLoader v-if="error" :error="error"/>
+  <div v-if="data && currentCategory" class="flex flex-col gap-2 bg-blue-search bg-grey-xx">
     <SecteursHeaderSearch :category="currentCategory"/>
     <ShopsLegendIcones/>
     <ShopsListResult :fiches="data"/>
   </div>
-  <span v-else-if="error">Error: {{ error }}</span>
 </template>

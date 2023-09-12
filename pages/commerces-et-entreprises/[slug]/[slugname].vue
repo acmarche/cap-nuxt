@@ -8,7 +8,12 @@ const {
   shop,
   errorShop
 } = shopGet(params.slugname)
-
+useHead({
+  title: title.value,
+})
+const title = computed(() => {
+  return `${shop.name} - ${shop.classements[0].path}`
+})
 const shopImage = computed(() => {
   if (shop.cap) {
     if (shop.cap.profileMediaPath) {
@@ -25,8 +30,8 @@ const shopImage = computed(() => {
 })
 </script>
 <template>
-  <WidgetsLoader v-if="pending"/>
-  <WidgetsLoader v-else-if="errorShop" :error="errorShop"/>
+  <WidgetsLoader v-if="pendingShop"/>
+  <WidgetsLoader v-if="errorShop" :error="errorShop"/>
   <article v-if="shop">
     <ShopHeader :shop="shop"/>
     <div class="grid grid-cols-[70%_30%] w-full">

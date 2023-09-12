@@ -2,6 +2,9 @@
 definePageMeta({
   layout: 'default',
 })
+useHead({
+  title: 'Tous les commerces'
+})
 const categorySelected = ref(0)
 const childSelected = ref(0)
 const openSunday = ref(false)
@@ -24,11 +27,11 @@ const {
                             v-model:open-sunday="openSunday"/>
     </div>
     <ShopsLegendIcones/>
-    <span v-if="pending">Loading...</span>
-    <div v-else-if="data">
+    <WidgetsLoader v-if="pending"/>
+    <WidgetsLoader v-if="error" :error="error"/>
+    <div v-if="data">
       <ShopsListResult :fiches="data"/>
     </div>
-    <span v-else-if="error">Error: {{ error }}</span>
   </section>
 </template>
 <style>

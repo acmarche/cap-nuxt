@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title:'coucou'
+  title: 'Secteurs'
 })
 definePageMeta({
   layout: 'default',
@@ -10,13 +10,13 @@ const {
   data,
   error,
   pending
-} = await useLazyFetch(() => `${config.public.API_URL}/commerces`)
+} = await useFetch(() => `${config.public.API_URL}/commerces`)
 </script>
 <template>
   <section class="flex flex-row">
     <WidgetsLoader v-if="pending"/>
-    <WidgetsLoader v-else-if="error" :error="error"/>
-    <template v-else-if="data">
+    <WidgetsLoader v-if="error" :error="error"/>
+    <template v-if="data">
       <SecteursSide/>
       <SecteursList :data="data"/>
     </template>

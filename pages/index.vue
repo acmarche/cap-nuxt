@@ -2,6 +2,9 @@
 definePageMeta({
     layout: 'homelayout',
 })
+useHead({
+  title: 'Page d\'accueil'
+})
 </script>
 <template>
   <HomepageSearchSection/>

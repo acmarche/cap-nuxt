@@ -2,6 +2,9 @@
 definePageMeta({
   layout: 'default',
 })
+useHead({
+  title: 'A propos de'
+})
 </script>
 <template>
   <section>
