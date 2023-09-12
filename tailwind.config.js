@@ -91,12 +91,12 @@ module.exports = {
                 shimmer: '6s infinite shimmer ease-in-out',
                 pulse: 'pulse 900ms ease-in-out infinite',
             },
-        },
-        objectPosition: {
-            'top-center': 'top center',
-            'center-center': 'center center',
-            'bottom-center': 'bottom center',
-            'bottom-left': 'bottom left'
+            objectPosition: {
+                'top-center': 'top center',
+                'center-center': 'center center',
+                'bottom-center': 'bottom center',
+                'bottom-left': 'bottom left'
+            },
         },
     },
     plugins: [

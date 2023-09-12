@@ -1,6 +1,8 @@
 export default (slug: String) => {
+    const config = useRuntimeConfig()
+
     const {pending: pendingShop, data: shop, error: errorShop} = useLazyFetch(
-        `http://api.local/bottin/fichebyslugname/${slug}`
+        `${config.public.API_URL}/fichebyslugname/${slug}`
     );
     return {
         pendingShop,

@@ -1,10 +1,11 @@
 export default () => {
+    const config = useRuntimeConfig()
     const {
         pending,
         data,
         error
     } = useFetch(
-        `http://api.local/bottin/commerces`
+        `${config.public.API_URL}/commerces`
     );
     return {
         pending,

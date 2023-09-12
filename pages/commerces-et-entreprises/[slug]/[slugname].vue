@@ -7,7 +7,7 @@ const {
   pendingShop,
   shop,
   errorShop
-} = shopGet(params.slugname);
+} = shopGet(params.slugname)
 
 const shopImage = computed(() => {
   if (shop.cap) {
@@ -25,12 +25,8 @@ const shopImage = computed(() => {
 })
 </script>
 <template>
-  <template v-if="pendingShop">
-    <WidgetsLoader/>
-  </template>
-  <template v-if="errorShop" class="text-red-600">
-    Error {{ errorShop }}
-  </template>
+  <WidgetsLoader v-if="pending"/>
+  <WidgetsLoader v-else-if="errorShop" :error="errorShop"/>
   <article v-if="shop">
     <ShopHeader :shop="shop"/>
     <div class="grid grid-cols-[70%_30%] w-full">

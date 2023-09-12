@@ -4,42 +4,19 @@ definePageMeta({
 })
 
 const route = useRoute();
-const {slug, slugname} = route.params;
+const {slug, slugname} = route.params
+const config = useRuntimeConfig()
 console.log(route)
 const {
   data,
   error,
   pending
-} = await useFetch(() => `http://api.local/bottin/fiches/cap/rubrique-by-slug/${slugname}`, {
-  onRequest({request, options}) {
-  },
-  onRequestError({request, options, error}) {
-    console.log(error)
-  },
-  onResponse({request, response, options}) {
-
-  },
-  onResponseError({request, response, options}) {
-    console.log(response)
-  },
-});
+} = await useFetch(() => `${config.public.API_URL}/fiches/cap/rubrique-by-slug/${slugname}`)
 const {
   data: currentCategory,
   error: error2,
   pending: pending2
-} = await useFetch(() => `http://api.local/bottin/category-by-slug/${slugname}`, {
-  onRequest({request, options}) {
-  },
-  onRequestError({request, options, error}) {
-    console.log(error)
-  },
-  onResponse({request, response, options}) {
-
-  },
-  onResponseError({request, response, options}) {
-    console.log(response)
-  },
-});
+} = await useFetch(() => `${config.public.API_URL}/category-by-slug/${slugname}`)
 </script>
 <template>
   <span v-if="pending && pending2">Loading...</span>

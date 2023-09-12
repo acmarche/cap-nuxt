@@ -1,6 +1,6 @@
 <script setup>
 import categoriesGet from "~/composables/categoriesGet";
-
+const config = useRuntimeConfig()
 const propos = defineProps({
   categorySelected: Number,
   childSelected: Number,
@@ -24,7 +24,7 @@ function upd2() {
   emits('update:child-selected', childSelected.value)
 }
 
-const url = computed(() => `http://api.local/bottin/categories/byparent/${catSelected.value}`)
+const url = computed(() => `${config.public.API_URL}/categories/byparent/${catSelected.value}`)
 const {data: children} = useFetch(url)
 
 watch(openSunday, (newValue) => {

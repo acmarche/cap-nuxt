@@ -1,21 +1,18 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'default',
-  title: 'test',
 })
-
 const categorySelected = ref(0)
 const childSelected = ref(0)
 const openSunday = ref(false)
 const openNoon = ref(false)
-
-const url = computed(() => `http://api.local/bottin/search/cap/rubrique/${childSelected.value}/${openNoon.value}/${openSunday.value}`);
-
+const config = useRuntimeConfig()
+const url = computed(() => `${config.public.API_URL}/search/cap/rubrique/${childSelected.value}/${openNoon.value}/${openSunday.value}`);
 const {
   data,
   error,
   pending
-} = await useFetch(() => url.value);
+} = await useLazyFetch(() => url.value);
 </script>
 <template>
   <section class="w-full">

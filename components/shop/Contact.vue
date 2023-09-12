@@ -18,9 +18,9 @@ function prettyPhone(phone: string) {
 
     <p v-if="shop.cap?.legalPhone" class="flex flex-row justify-between p-2">
       <span>Par téléphone :</span>
-      <span class="">
+      <a :href="`tel:${prettyPhone(shop.cap?.legalPhone)}`">
         {{ prettyPhone(shop.cap?.legalPhone) }}
-      </span>
+      </a>
     </p>
 
     <p v-if="shop.fax" class="flex flex-row justify-between p-2">
@@ -32,9 +32,9 @@ function prettyPhone(phone: string) {
 
     <p v-if="shop.gsm" class="flex flex-row justify-between p-2">
       <span> Par Gsm :</span>
-      <span class="">
+      <a :href="`tel:${prettyPhone(shop.cap?.gsm)}`">
         {{ prettyPhone(shop.gsm) }}
-      </span>
+      </a>
     </p>
 
     <p v-if="shop.cap?.vatNumber" class="flex flex-row justify-between p-2">
@@ -42,36 +42,39 @@ function prettyPhone(phone: string) {
     </p>
 
     <p v-if="shop.email" class="flex flex-row justify-between p-2">
-      <span>Par email :</span> <a :href="`mailto:${shop.email}`" class="hover:text-white hover:opacity-80">{{
-        shop.email
-      }}</a>
+      <span>Par email :</span>
+      <a :href="`mailto:${shop.email}`" class="hover:text-white hover:opacity-80">
+        {{ shop.email }}
+      </a>
     </p>
 
     <div class="flex flex-row items-center gap-2 justify-between">
 
-      <a v-if="shop.website" :href="shop.website"
-         class="hover:text-green-default hover:opacity-80 p-3 bg-white text-blue-default"
-         title="Accédez à notre site">Accéder à notre site
-      </a>
+      <NuxtLink v-if="shop.website" :to="shop.website"
+                class="hover:text-green-default hover:opacity-80 p-3 bg-white text-blue-default"
+                title="Accédez à notre site">Accéder à notre site
+      </NuxtLink>
 
       <div class="flex flex-row">
-        <a v-if="shop.cap?.facebookLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.facebookLink"
-           target="_blank"
-           title="Rejoignez-nous sur Facebook">
+        <NuxtLink v-if="shop.cap?.facebookLink" class="hover:text-white hover:opacity-80 p-2"
+                  :to="shop.cap.facebookLink"
+                  target="_blank"
+                  title="Rejoignez-nous sur Facebook">
           <img src="/images/socialLink1.png" width="37" height="38" alt="Icone social"/>
-        </a>
+        </NuxtLink>
 
-        <a v-if="shop.cap?.twitterLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.twitterLink"
-           target="_blank"
-           title="Rejoignez-nous sur Twitter">
+        <NuxtLink v-if="shop.cap?.twitterLink" class="hover:text-white hover:opacity-80 p-2" :to="shop.cap.twitterLink"
+                  target="_blank"
+                  title="Rejoignez-nous sur Twitter">
           <img src="/images/socialLink2.png" width="37" height="38" alt="Icone social"/>
-        </a>
+        </NuxtLink>
 
-        <a v-if="shop.cap?.linkedinLink" class="hover:text-white hover:opacity-80 p-2" :href="shop.cap.linkedinLink"
-           target="_blank"
-           title="Rejoignez-nous sur Linkedin">
+        <NuxtLink v-if="shop.cap?.linkedinLink" class="hover:text-white hover:opacity-80 p-2"
+                  :to="shop.cap.linkedinLink"
+                  target="_blank"
+                  title="Rejoignez-nous sur Linkedin">
           <img src="/images/socialLink3.png" width="37" height="38" alt="Icone social"/>
-        </a>
+        </NuxtLink>
       </div>
 
     </div>

@@ -1,14 +1,14 @@
 <template>
   <div id="csmStamp" class="flex flex-row items-c justify-between">
-    <img class="illuCSM" src="https://cap.marche.be/templates/commercio/resources/leftIlluCSM.png"
+    <img class="illuCSM" src="/images/leftIlluCSM.png"
          width="743" height="188" alt="">
     <div class="csmInfo text-white self-center">
       <h2 class="text-2xl font-pathway-semi-bold p-2"> Les 9 grains d'or fait partie de « Cap sur Marche ! »</h2>
       <div class="flex flex-row gap-2">
-        <a class="blockLink reverseLink" href="https://cap.marche.be//cap-sur-marche"
-           title="Découvrez-en plus sur Cap sur Marche">Découvrez-en plus <span
+        <NuxtLink class="blockLink reverseLink" to="/cap-sur-marche"
+                  title="Découvrez-en plus sur Cap sur Marche">Découvrez-en plus <span
             class="cornerBit hasTransitions"></span> <span class="cornerBit hasTransitions"></span>
-        </a>
+        </NuxtLink>
         <p>ou</p>
         <a id="newsletterTrigger" class="blockLink reverseLink" href="#"
            title="Recevez notre newsletter">Recevez notre newsletter <span
@@ -17,7 +17,7 @@
       </div>
     </div>
     <img class="illuCSM "
-         src="https://cap.marche.be/templates/commercio/resources/rightIlluCSM.png"
+         src="/images/rightIlluCSM.png"
          width="341" height="187" alt="">
   </div>
 </template>

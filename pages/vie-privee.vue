@@ -1,0 +1,3 @@
+<template>
+  Vie privée
+</template>

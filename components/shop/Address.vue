@@ -11,14 +11,14 @@ const {shop} = defineProps<{
          alt="Icone catégorie">
     <span class="uppercase">Adresse</span>
   </h2>
-  <a title="Afficher sur google map" target="_blank" class="block mb-3 hover:text-white hover:opacity-80"
-     :href="`http://maps.google.com/?q=${shop.latitude}&${shop.longitude}`">
+  <NuxtLink title="Afficher sur google map" target="_blank" class="block mb-3 hover:text-white hover:opacity-80"
+     :to="`http://maps.google.com/?q=${shop.latitude}&${shop.longitude}`">
     <span itemprop="streetAddress">{{ shop.rue }} {{ shop.numero }}</span>
     <div>
       <span class="" itemprop="postalCode">{{ shop.cp }}</span>
       <span class="" itemprop="addressLocality">{{ shop.localite }}</span>
     </div>
-  </a>
+  </NuxtLink>
 
   <a id="linkToMap" href="#map" title="Accéder à la map"
      class="flex flex-row gap-2 hover:text-white hover:opacity-80 my-3">

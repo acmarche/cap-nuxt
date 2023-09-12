@@ -1,18 +1,21 @@
 <script setup>
+useHead({
+  title:'coucou'
+})
 definePageMeta({
   layout: 'default',
-  title: 'My home page'
 })
+const config = useRuntimeConfig()
 const {
   data,
   error,
   pending
-} = await useFetch(() => `http://api.local/bottin/commerces`);
+} = await useLazyFetch(() => `${config.public.API_URL}/commerces`)
 </script>
 <template>
   <section class="flex flex-row">
-    <span v-if="pending">Loading...</span>
-    <span v-else-if="error">Error: {{ error }}</span>
+    <WidgetsLoader v-if="pending"/>
+    <WidgetsLoader v-else-if="error" :error="error"/>
     <template v-else-if="data">
       <SecteursSide/>
       <SecteursList :data="data"/>

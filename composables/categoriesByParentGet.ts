@@ -1,9 +1,10 @@
 export default (categorySelected: Number) => {
+    const config = useRuntimeConfig()
     const {
         data,
         error,
         pending
-    } =  useFetch(() => `http://api.local/bottin/categories/byparent/${categorySelected}`);
+    } =  useFetch(() => `${config.public.API_URL}/categories/byparent/${categorySelected}`);
     return {
         pending,
         data,

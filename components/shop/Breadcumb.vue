@@ -7,7 +7,7 @@ const {path, textColor, textColorHover} = defineProps<{
   textColorHover: { type: String, required: true, default: 'hover:text-green-default' },
 }>()
 
-const pathComputed = computed(() => path.map((element) => {
+const pathComputed = computed(() => path.map((element: Object) => {
   if (element.id === 511 || element.id === 610) { //remove economie, commerces et entreprises
     return null;
   }

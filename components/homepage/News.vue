@@ -7,7 +7,7 @@ import {news} from "~/composables/newsItemsGets"
       <h2 class="text-2xl font-pathway-semi-bold text-blue-default mb-3 leading-8">L'ACTU DES COMMERCANTS</h2>
       <ul class="grid grid-cols-1 lg:grid-cols-3 gap-2">
         <li v-for="item in news" :key="item.id" class="">
-          <a :href="item.url" class="block h-full w-full news-block">
+          <NuxtLink :to="item.url" class="block h-full w-full news-block">
             <div class="flex flex-col">
               <img :src="item.img" alt="img" class="h-60 w-auto object-cover">
               <div class="flex flex-row items-center justify-start gap-2 pt-2 px-2 bg-grey-light">
@@ -20,15 +20,15 @@ import {news} from "~/composables/newsItemsGets"
                 <span class="text-grey-dark text-base self-end ">{{ item.date }}</span>
               </div>
             </div>
-          </a>
+          </NuxtLink>
         </li>
       </ul>
-      <a href="https://cap.marche.be/evenements" class="block ml-auto w-64 mt-2">
+      <NuxtLink to="/evenements" class="block ml-auto w-64 mt-2">
         <div
             class="bg-blue-default hover:bg-blue-lighter text-white pt-2 p-3 text-lg flex flex-row justify-center items-center">
           Voir plus d’évenements
         </div>
-      </a>
+      </NuxtLink>
     </div>
   </section>
 </template>

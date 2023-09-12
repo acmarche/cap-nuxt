@@ -2,26 +2,16 @@
 definePageMeta({
   layout: 'default',
 })
-
 const {path, params} = useRoute()
-
+const config = useRuntimeConfig()
 const {
   data,
   error,
   pending
-} = await useFetch(() => `http://api.local/bottin/category-by-slug/${params.slug}`, {
-  onRequest({request, options}) {
-  },
-  onRequestError({request, options, error}) {
-    console.log(error)
-  },
-  onResponse({request, response, options}) {
-
-  },
-  onResponseError({request, response, options}) {
-    console.log(response)
-  },
-});
+} = await useFetch(() => `${config.public.API_URL}/category-by-slug/${params.slug}`)
+useHead({
+  title:data.name,
+})
 </script>
 <template>
   <section class="flex flex-row pb-4 bg-grey-lighter" v-if="data">

@@ -2,12 +2,12 @@
   <div class="bigTriangle lg:col-start-1 lg:row-start-3 justify-self-start lg:self-end"></div>
   <div
       class="flex flex-row gap-3 pb-3 z-10 lg:col-start-1 lg:row-start-3 lg:self-end">
-    <a href="/" class="">
+    <NuxtLink to="https://www.marche.be" class="">
       <img src="/images/logoHome1.png" alt="marche" class="h-auto w-28">
-    </a>
-    <a href="/">
+    </NuxtLink>
+    <NuxtLink to="https://adl.marche.be">
       <img src="/images/logoHome2.png" alt="adl" class="h-auto w-28">
-    </a>
+    </NuxtLink>
   </div>
 </template>
 <style>

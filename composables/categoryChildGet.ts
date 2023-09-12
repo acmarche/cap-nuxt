@@ -1,10 +1,12 @@
 export default (categorySelected: Number) => {
+    const config = useRuntimeConfig()
+
     const {
         pending: pendingChilds,
         data: childs,
         error: errorChilds
     } = useLazyFetch(
-        `http://api.local/bottin/categories/byparent/${categorySelected}`, {
+        `${config.public.API_URL}/categories/byparent/${categorySelected}`, {
             /* Changing the id will trigger a refetch */
             watch: [categorySelected]
         }

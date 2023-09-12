@@ -5,8 +5,8 @@
       sur
       Marche, à valoir chez tous les commerçants membres.</p>
     <div class="m-3 p-3 border border-white text-white hover:border-blue-default">
-      <a href="https://cheques.marche.be/" target="_blank"
-         class="text-decoration-none ff-ubuntu ctaBtnLine mt-4">En savoir plus</a>
+      <NuxtLink to="https://cheques.marche.be/" target="_blank"
+         class="text-decoration-none ff-ubuntu ctaBtnLine mt-4">En savoir plus</NuxtLink>
     </div>
   </div>
 </template>

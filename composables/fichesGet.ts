@@ -1,10 +1,12 @@
 export default (categorySelected: Number) => {
+    const config = useRuntimeConfig()
+
     const {
         pending: pendingFiches,
         data: fiches,
         error: errorFiches
     } = useLazyFetch(
-        `http://api.local/bottin/fiches/rubrique/${categorySelected}`
+        `${config.public.API_URL}/fiches/rubrique/${categorySelected}`
     );
     return {
         pendingFiches,
