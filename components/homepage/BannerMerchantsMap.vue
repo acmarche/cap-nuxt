@@ -6,7 +6,7 @@
         <h3 class="text-2xl font-pathway-bold">DÉCOUVREZ LA CARTE DES COMMERÇANTS</h3>
         <NuxtLink to="/carte">
           <div
-              class="text-white bg-blue-default hover:bg-blue-lighter p-1 text-lg flex flex-row justify-center items-center">
+              class="text-white bg-blue-default hover:bg-blue-lighter p-3 text-lg flex flex-row justify-center items-center">
             Découvrir la carte des commerçants
           </div>
         </NuxtLink>
