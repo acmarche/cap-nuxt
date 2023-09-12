@@ -2,7 +2,8 @@
 import {news} from "~/composables/newsItemsGets"
 </script>
 <template>
-  <section class="w-full mt-8 lg:mt-12 bg-geometric bg-no-repeat bg-bottom-left">
+  <section class="w-full mt-8 bg-geometric22 bg-no-repeat bg-bottom-left relative">
+    <HomepageBannerNewsletter/>
     <div class="w-full px-5 lg:w-2/3 lg:px-2 mx-auto">
       <h2 class="text-2xl font-pathway-semi-bold text-blue-default mb-3 leading-8">L'ACTU DES COMMERCANTS</h2>
       <ul class="grid grid-cols-1 lg:grid-cols-3 gap-2">
