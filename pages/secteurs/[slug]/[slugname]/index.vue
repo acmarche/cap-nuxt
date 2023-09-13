@@ -5,7 +5,6 @@ definePageMeta({
 const route = useRoute();
 const {slug, slugname} = route.params
 const config = useRuntimeConfig()
-console.log(route)
 const {
   data,
   error,
@@ -23,7 +22,7 @@ useHead({
 <template>
   <WidgetsLoader v-if="pending"/>
   <WidgetsLoader v-if="error" :error="error"/>
-  <div v-if="data && currentCategory" class="flex flex-col gap-2 bg-blue-search bg-grey-xx">
+  <div v-if="data && currentCategory" class="flex flex-col gap-2 bg-blue-search bg-grey-xx px-4 py-4">
     <SecteursHeaderSearch :category="currentCategory"/>
     <ShopsLegendIcones/>
     <ShopsListResult :fiches="data"/>
