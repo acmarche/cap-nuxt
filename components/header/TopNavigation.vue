@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {items} from "~/composables/menuItemsGet";
-
-const {mobileMenu} = defineProps<{
-  mobileMenu: { type: Boolean, required: true, default: false },
-}>()
+const props = defineProps({
+  mobileMenu: { type: Boolean, required: true, default: false }
+})
+const { mobileMenu } = toRefs(props)
 </script>
 <template>
   <nav
