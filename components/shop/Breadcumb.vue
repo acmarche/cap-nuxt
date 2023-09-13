@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {IconChevronRight} from '@tabler/icons-vue';
+import generateBreadcrumb from "~/composables/generateBreadcrumb";
 
 const {path, textColor, textColorHover} = defineProps<{
   path: { type: Array<Object>, required: true, default: [] },
@@ -14,6 +15,8 @@ const pathComputed = computed(() => path.map((element: Object) => {
   return element;
 }).filter((element) => element !== null));
 
+const breadcrumb = generateBreadcrumb(pathComputed.value)
+console.log(breadcrumb)
 </script>
 <template>
   <nav class="flex" aria-label="Breadcrumb">
@@ -24,9 +27,9 @@ const pathComputed = computed(() => path.map((element: Object) => {
           Commerces et entreprises
         </NuxtLink>
       </li>
-      <li v-for="path in pathComputed" class="flex items-center">
+      <li v-for="(path, index) in pathComputed" class="flex items-center" :key="path.id">
         <IconChevronRight class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true"/>
-        <NuxtLink :href="`/secteurs/${path.slugname}`"
+        <NuxtLink :href="`${breadcrumb[index]}`"
                   class="text-sm font-medium uppercase"
                   :class="`${textColor} ${textColorHover}`"
                   aria-current="page">{{ path.name }}
