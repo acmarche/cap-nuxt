@@ -43,7 +43,7 @@ watch(openNoon, (newValue) => {
         <h2 class="text-xl uppercase font-pathway-semi-bold mb-2">TRIER PAR CATÉGORIE</h2>
         <select name="category" v-if="categories" class="text-grey-e" v-model="catSelected" @change="upd">
           <option value="0">Choisir une catégorie</option>
-          <option v-for="category in categories" :value="category.id">
+          <option v-for="category in categories" :value="category.id" :key="category.id">
             {{ category.name }}
           </option>
         </select>
@@ -53,7 +53,7 @@ watch(openNoon, (newValue) => {
         <h2 class="text-xl uppercase font-pathway-semi-bold mb-2">TRIER PAR SOUS-CATÉGORIE</h2>
         <select name="child" class="text-grey-e" v-model="childSelected" @change="upd2">
           <option value="0">Choisir une catégorie</option>
-          <option v-if="children" v-for="child in children" :value="child.id">
+          <option v-if="children" v-for="child in children" :value="child.id" :key="child.id">
             {{ child.name }}
           </option>
         </select>
