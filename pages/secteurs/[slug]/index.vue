@@ -12,9 +12,6 @@ const {
 useHead({
   title:data.name,
 })
-watch(data,(newv)=>{
-  console.log(data)
-})
 </script>
 <template>
   <WidgetsLoader v-if="pending"/>
