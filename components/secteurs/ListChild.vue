@@ -6,7 +6,7 @@ const {category} = defineProps<{
 }>()
 </script>
 <template>
-  <section class="grid grid-cols-2 gap-4 items-center w-full p-4">
+  <section class="grid grid-cols-2 gap-3 items-center w-full p-4">
     <NuxtLink v-for="child in category.enfants"
               :key="child.id"
               :to="{name:'secteurs-slug-slugname',params:{slug:category.slugname,slugname:child.slugname}}"
