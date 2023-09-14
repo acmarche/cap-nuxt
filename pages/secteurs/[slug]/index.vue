@@ -15,8 +15,8 @@ useHead({
 </script>
 <template>
   <WidgetsLoader v-if="pending"/>
-  <WidgetsLoader v-if="error" :error="error"/>
-  <section class="flex flex-row pb-4 bg-grey-lighter items-start" v-if="data">
+  <WidgetsLoader v-else-if="error" :error="error"/>
+  <section class="flex flex-col lg:flex-row pb-4 bg-grey-lighter items-start" v-if="data">
     <SecteursSideChild :category="data"/>
     <SecteursListChild :category="data"/>
   </section>

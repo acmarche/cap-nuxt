@@ -21,7 +21,7 @@ useHead({
 </script>
 <template>
   <WidgetsLoader v-if="pending"/>
-  <WidgetsLoader v-if="error" :error="error"/>
+  <WidgetsLoader v-else-if="error" :error="error"/>
   <div v-if="data && currentCategory" class="flex flex-col gap-2 bg-blue-search bg-grey-xx px-4 py-4">
     <SecteursHeaderSearch :category="currentCategory"/>
     <ShopsLegendIcones/>

@@ -13,9 +13,9 @@ const {
 } = await useFetch(() => `${config.public.API_URL}/commerces`)
 </script>
 <template>
-  <section class="flex flex-row">
+  <section class="flex flex-col lg:flex-row">
     <WidgetsLoader v-if="pending"/>
-    <WidgetsLoader v-if="error" :error="error"/>
+    <WidgetsLoader v-else-if="error" :error="error"/>
     <template v-if="data">
       <SecteursSide/>
       <SecteursList :data="data"/>
