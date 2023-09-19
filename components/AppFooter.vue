@@ -69,10 +69,10 @@ const events = [
         <a href="mailto:cap@marche.be">cap@marche.be</a><br/>
         </span>
           <div class="flex gap-2 items-center mt-2">
-            <NuxtLink href="/">
+            <NuxtLink to="https://www.marche.be">
               <img src="/images/logoHome1.png" alt="marche.be" class="h-16">
             </NuxtLink>
-            <NuxtLink href="/">
+            <NuxtLink to="https://adl.marche.be">
               <img src="/images/logoHome2.png" alt="adl" class="h-16">
             </NuxtLink>
           </div>
