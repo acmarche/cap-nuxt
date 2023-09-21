@@ -75,6 +75,9 @@ module.exports = {
                 },
             },
             keyframes: {
+                marquee: {
+                    to: {transform: "translateX(-50%)"},
+                },
                 shimmer: {
                     '0%': {
                         backgroundPosition: 'left',
@@ -90,6 +93,7 @@ module.exports = {
             animation: {
                 shimmer: '6s infinite shimmer ease-in-out',
                 pulse: 'pulse 900ms ease-in-out infinite',
+                marquee: "marquee var(--duration, 30s) linear infinite",
             },
             objectPosition: {
                 'top-center': 'top center',
