@@ -14,8 +14,8 @@
         @apply antialiased text-grey-dark;
     }
 
-    * {
-       /*  outline: 1px red solid;*/
+    footer * {
+         outline: 1px red solid;
     }
 
     a:hover {

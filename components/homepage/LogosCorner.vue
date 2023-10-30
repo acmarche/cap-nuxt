@@ -13,7 +13,7 @@
 <style>
 .bigTriangle {
   /*border-width: 195px 0 0 490px;*/
-  @apply border-r-0 border-b-0 border-t-[250px] border-l-[600px] lg:border-t-[195px] lg:border-l-[490px];
+  @apply border-r-0 border-b-0 border-t-[135px] border-l-[490px];
   position: absolute;
   left: 0;
   bottom: 0;

@@ -3,7 +3,7 @@
 </script>
 <template>
   <form name="searching"
-        class="mx-4 lg:mx-auto flex lg:flex w-full lg:w-1/2 lg:col-span-2 mt-44 mb-56 lg:mt-44 lg:mb-56">
+        class="bg-blue-default mx-4 self-center w-4/5 lg:mx-auto flex lg:flex lg:w-1/2 lg:col-span-2 mt-24 md:mt-44 mb-32 md:mb-56 lg:mt-44 lg:mb-56">
     <label class="block" for="search">
       <span class="sr-only">Rechercher</span>
     </label>
@@ -17,7 +17,7 @@
     />
     <button
         type="submit"
-        class="i-search relative right-12 top-0 h-16 w-16 bg-blue-default rounded-r-md">
+        class="i-search relative right-4 top-0 h-16 w-20 lg:w-16 bg-blue-default rounded-r-md">
       <IconsIconSearch :class="'text-white flex mx-auto'"/>
     </button>
   </form>

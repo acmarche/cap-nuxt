@@ -101,6 +101,9 @@ module.exports = {
                 'bottom-center': 'bottom center',
                 'bottom-left': 'bottom left'
             },
+            backgroundPosition: {
+                'center-left': 'center left',
+            }
         },
     },
     plugins: [

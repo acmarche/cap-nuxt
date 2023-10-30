@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-full mt-12 lg:mt-0 flex flex-col lg:flex-row text-green-default items-center justify-start">
+        class="w-full mt-12 lg:mt-0 flex flex-col lg:flex-row text-green-default bg-grey-light items-center justify-start">
       <div class="hidden lg:flex w-2/5 lg:flex-col lg:justify-center lg:gap-3 lg:items-center">
         <h3 class="text-2xl font-pathway-bold">DEVENEZ MEMBRE DE CAP</h3>
       </div>
