@@ -9,20 +9,19 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/ui": "^2.8.1",
-    "@tabler/icons-vue": "^2.34.0",
+    "@nuxt/ui": "^2.9.0",
+    "@tabler/icons-vue": "^2.39.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.6.0",
+    "@types/node": "^20.8.7",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
-    "autoprefixer": "^10.4.15",
+    "autoprefixer": "^10.4.16",
     "leaflet": "^1.9.4",
-    "nuxt": "^3.7.2",
-    "postcss": "^8.4.29",
+    "nuxt": "^3.8.0",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
+    "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3.3.3"
   }
 }
